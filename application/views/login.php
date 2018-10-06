@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html class=" js no-mobile desktop no-ie ff ff62 root-section gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius no-cssreflections csstransforms csstransitions no-touch no-retina fontface domloaded w-1366 gt-240 gt-320 gt-480 gt-640 gt-768 gt-800 gt-1024 gt-1280 lt-1440 lt-1680 lt-1920 no-portrait landscape" id="search-page"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <script src="<?php echo base_url('assets/sso_files/jquery.min.js') ?>" type="text/javascript"></script>
+      <script src="<?php echo base_url('assets/sso_files/metro.js') ?>" type="text/javascript"></script>
+       <script src="<?php echo base_url('assets/sso_files/jquery.cookie.min.js.js') ?>" type="text/javascript"></script>
+    <style>
+   .app-bar-element{
+     padding: 0px !important;
+   }
+    </style>
 </head>
 <body id="cas">
     <div style="position:relative;">
-        <title>Single Sign On - Universitas Jember</title>
+        <title>Sistem Informasi Satu Pintu KEMENAG Jember</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="<?php echo base_url('assets/sso_files/font-awesome.css') ?>" rel="stylesheet" type="text/css" />
@@ -15,7 +23,6 @@
         <link href="<?php echo base_url('assets/sso_files/metro-icons.css') ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('assets/sso_files/metro-responsive.css') ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('assets/sso_files/metro-schemes.css') ?>" rel="stylesheet" type="text/css" />
-        <link rel="icon" href="https://sso.unej.ac.id/cas/favicon.ico" type="image/x-icon">
         <script src="<?php echo base_url('sets/sso_files/zxcvbn.js') ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('sets/sso_files/jquery.js') ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('sets/sso_files/zmetro.js') ?>" type="text/javascript"></script>
@@ -28,7 +35,7 @@
         <div class="container">
             <div class="app-bar darcula no-pc">
                 <a class="app-bar-element">
-                    <span id="toggle-tiles-dropdown" class=""><span class="mif-apps mif-2x"></span><b>MENU SISTER</b></span>
+                    <span id="toggle-tiles-dropdown" class=""><span class="mif-apps mif-2x"></span><b>MENU SISP</b></span>
                 </a>
                 <div class="app-bar-drop-container" data-role="dropdown" data-toggle-element="#toggle-tiles-dropdown" data-no-close="false" style="width: 270px;">
                     <a class="app-bar-element">
@@ -36,92 +43,92 @@
                     <div class="tile-container bg-white">
                         <a class="app-bar-element">
                         </a>
-                        <a href="https://sister.unej.ac.id/site/logincas">
+                        <a href="#">
                             <div class="tile fg-white" style="background-color:#c62828;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                        <div style="width: 100%; height: 100%; background-image: url('/cas/images/sister.png'); background-size: 70%; background-position:center;background-repeat: no-repeat; border-radius: 0px;">
+                                        <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/1.png')?>'); background-size: 70%; background-position:center;background-repeat: no-repeat; border-radius: 0px;">
                                         </div>
                                     </div>
-                                    <div class="tile-label"><b>SISTER</b></div>
+                                    <div class="tile-label"><b>WEB 1</b></div>
                                 </div>
                             </div>
                         </a>
-                        <a href="https://e-learning.unej.ac.id/login/index.php">
+                        <a href="#">
                             <div class="tile fg-white" style="background-color:#1976d2;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                        <div style="width: 100%; height: 100%; background-image: url('/cas/images/7.svg'); background-size: 70%; background-position:center;background-repeat: no-repeat; border-radius: 0px;">
+                                        <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/2.png')?>'); background-size: 70%; background-position:center;background-repeat: no-repeat; border-radius: 0px;">
                                         </div>
                                     </div>
-                                    <div class="tile-label"><b>E-LEARNING</b></div>
+                                    <div class="tile-label"><b>WEB 2</b></div>
                                 </div>
                             </div>
                         </a>
-                        <a href="https://simangga.unej.ac.id/index.php?r=site/logincas">
+                        <a href="#">
                             <div class="tile fg-white" style="background-color:#00695c;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                        <div style="width: 100%; height: 100%; background-image: url('/cas/images/1.svg'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
+                                        <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/3.png')?>'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
                                         </div>
                                     </div>
-                                    <div class="tile-label"><b>SIMANGGA</b></div>
+                                    <div class="tile-label"><b>WEB 3</b></div>
                                 </div>
                             </div>
                         </a>
-                        <a href="https://simkeu.unej.ac.id/index.php/site/logincas">
+                        <a href="#">
                             <div class="tile fg-white" style="background-color:#f57f17;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                        <div style="width: 100%; height: 100%; background-image: url('/cas/images/2.svg'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
+                                        <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/4.png')?>'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
                                         </div>
                                     </div>
-                                    <div class="tile-label"><b>SIMKEU</b></div>
+                                    <div class="tile-label"><b>WEB 4</b></div>
                                 </div>
                             </div>
                         </a>
-                        <a href="https://sikd.unej.ac.id/index.php">
+                        <a href="#">
                             <div class="tile fg-white" style="background-color:#6a1b9a;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                        <div style="width: 100%; height: 100%; background-image: url('/cas/images/3.svg'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
+                                        <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/5.png')?>'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
                                         </div>
                                     </div>
-                                    <div class="tile-label"><b>SIKD</b></div>
+                                    <div class="tile-label"><b>WEB 5</b></div>
                                 </div>
                             </div>
                         </a>
-                        <a href="http://web.unej.ac.id/wp-login.php?redirect_to=http%3A%2F%2Fweb.unej.ac.id%2F">
+                        <a href="#">
                             <div class="tile fg-white" style="background-color:#f06292;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                        <div style="width: 100%; height: 100%; background-image: url('/cas/images/6.svg'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
+                                        <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/6.png')?>'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
                                         </div>
                                     </div>
-                                    <div class="tile-label"><b>FBUNEJ</b></div>
+                                    <div class="tile-label"><b>WEB 6</b></div>
                                 </div>
                             </div>
                         </a>
-                        <a href="https://kawanda.unej.ac.id/index.php/login">
+                        <a href="#">
                             <div class="tile fg-white" style="background-color:#0d47a1;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                        <div style="width: 100%; height: 100%; background-image: url('/cas/images/10.svg'); background-size: 50%; background-position:center; background-repeat: no-repeat; border-radius: 0px;">
+                                        <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/7.png')?>'); background-size: 50%; background-position:center; background-repeat: no-repeat; border-radius: 0px;">
                                         </div>
                                     </div>
-                                    <div class="tile-label"><b>KAWANDA</b></div>
+                                    <div class="tile-label"><b>WEB 7</b></div>
                                     <span class="tile-badge bg-darkRed mif-star-full"></span>
                                 </div>
                             </div>
                         </a>
-                        <a href="https://uc3.unej.ac.id/login.php?do=ext&amp;bk=cas.client">
+                        <a href="#">
                             <div class="tile fg-white" style="background-color:#ffc107;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                        <div style="width: 100%; height: 100%; background-image: url('/cas/images/8.svg'); background-size: 50%; background-position:center;background-repeat: no-repeat; border-radius: 0px;">
+                                        <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/8.png')?>'); background-size: 50%; background-position:center;background-repeat: no-repeat; border-radius: 0px;">
                                         </div>
                                     </div>
-                                    <div class="tile-label"><b>UC3</b></div>
+                                    <div class="tile-label"><b>WEB 8</b></div>
                                     <span class="tile-badge bg-darkRed mif-star-full"></span>
                                 </div>
                             </div>
@@ -130,7 +137,7 @@
                 </div>
             </div>
             <div id="header">
-                <div class="image-container"><a href="https://sister.unej.ac.id/"><img 
+                <div class="image-container"><a href="#"><img 
  src="<?php echo base_url('assets/sso_files/header.png') ?>"
                style="max-width:60%;margin:0px auto;"></a></div>
             </div>
@@ -145,7 +152,7 @@
                                 <div style="display:table;border-collapse: separate;border-spacing: 10px;width:100%;">
                                     <div class="row fl-controls-left" style="display:table-row">
                                         <div style="display:table-cell">
-                                            <label for="username" class="fl-label"><span class="accesskey">U</span>username:</label>
+                                            <label for="username" class="fl-label"><span class="accesskey">U</span>sername:</label>
                                         </div>
                                         <div style="display:table-cell">
                                             <input type="text" name="username" class="form-control" placeholder="Username" />
@@ -184,168 +191,168 @@
                     </div>
                     <div class="cell colspan8 no-tablet">
                         <div class="tile-container bg-transparent">
-                            <a href="https://sister.unej.ac.id/site/logincas">
+                            <a href="#">
                                 <div class="tile fg-white" style="background-color:#c62828;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
                                             <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                                <div style="width: 100%; height: 100%; background-image: url('/cas/images/sister.png'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
+                                                <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/1.png')?>'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#c62828;">
-                                            Sistem Informasi Terpadu
-                                            <br>Universitas Jember
-                                            <br><span style="text-align:right">Copyright © UPT TI UNEJ</span>
+                                            sistem web 1
+                                            <br>KEMENAG
+                                            <br><span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"><b>SISTER</b></div>
+                                        <div class="tile-label"><b>WEB 1</b></div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="https://e-learning.unej.ac.id/login/index.php">
+                            <a href="#">
                                 <div class="tile fg-white" style="background-color:#1976d2;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
                                             <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                                <div style="width: 100%; height: 100%; background-image: url('/cas/images/7.svg'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
+                                                <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/2.png')?>'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#1976d2;">
-                                            Modular Object-Oriented Dynamic Learning Environment (MOODLE)
-                                            <br><span style="text-align:right">Copyright © 1999 Martin Dougiamas and others</span>
+                                            sistem web 2
+                                            <br><span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"><b>E-LEARNING</b></div>
+                                        <div class="tile-label"><b>WEB 2</b></div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="https://simangga.unej.ac.id/index.php?r=site/logincas">
+                            <a href="#">
                                 <div class="tile fg-white" style="background-color:#00695c;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
                                             <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                                <div style="width: 100%; height: 100%; background-image: url('/cas/images/1.svg'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
+                                                <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/3.png')?>'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#00695c;">
-                                            Sistem Informasi Manajemen Anggaran
-                                            <br>Universitas Jember
-                                            <br><span style="text-align:right">Copyright © 1999 BAPSI UNEJ</span>
+                                            sistem web 3
+                                            <br><span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"><b>SIMANGGA</b></div>
+                                        <div class="tile-label"><b>WEB 3</b></div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="https://simkeu.unej.ac.id/">
+                            <a href="#">
                                 <div class="tile fg-white" style="background-color:#f57f17;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
                                             <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                                <div style="width: 100%; height: 100%; background-image: url('/cas/images/2.svg'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
+                                                 <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/4.png')?>'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#f57f17;">
-                                            Sistem Informasi Keuangan
-                                            <br>Universitas Jember
-                                            <br><span style="text-align:right">Copyright © Keuangan Unej</span>
+                                            sistem web 4
+                                            <br><span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"><b>SIMKEU</b></div>
+                                        <div class="tile-label"><b>WEB 4</b></div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="https://sikd.unej.ac.id/index.php">
+                            <a href="#">
                                 <div class="tile fg-white" style="background-color:#6a1b9a;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
                                             <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                                <div style="width: 100%; height: 100%; background-image: url('/cas/images/3.svg'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
+                                                 <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/5.png')?>'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#6a1b9a;">
-                                            Sistem Kearsipan Dinamis
-                                            <br><span style="text-align:right">Copyright © ANRI</span>
+                                            sistem web 5
+                                            <br><span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"><b>SIKD</b></div>
+                                        <div class="tile-label"><b>WEB 5</b></div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="http://web.unej.ac.id/wp-login.php?redirect_to=http%3A%2F%2Fweb.unej.ac.id%2F">
+                            <a href="#">
                                 <div class="tile fg-white" style="background-color:#f06292;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
                                             <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                                <div style="width: 100%; height: 100%; background-image: url('/cas/images/6.svg'); background-size: cover; background-repeat: no-repeat; border-radius: 0px;">
+                                                 <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/6.png')?>'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#f06292;">
-                                            Forum Blogger Universitas Jember
+                                            sistem web 6
+                                            <br><span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"><b>FBUNEJ</b></div>
+                                        <div class="tile-label"><b>WEB 6</b></div>
                                     </div>
                                 </div>
                             </a>
-                            <a href="https://kawanda.unej.ac.id/index.php/login">
+                            <a href="#">
                                 <div class="tile fg-white" style="background-color:#0d47a1;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
                                             <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                                <div style="width: 100%; height: 100%; background-image: url('/cas/images/10.svg'); background-size: 50%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
+                                                 <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/7.png')?>'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#0d47a1;">
-                                            Layanan Penyimpanan, Backup, dan Sharing File
+                                            sistem web 7
+                                            <br><span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"><b>KAWANDA</b></div>
+                                        <div class="tile-label"><b>WEB 7</b></div>
                                         <span class="tile-badge bg-darkRed mif-star-full"></span>
                                     </div>
                                 </div>
                             </a>
-                            <a href="https://uc3.unej.ac.id/login.php?do=ext&amp;bk=cas.client">
+                            <a href="#">
                                 <div class="tile fg-white" style="background-color:#ffc107;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
                                             <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
-                                                <div style="width: 100%; height: 90%; background-image: url('/cas/images/8.svg'); background-size: 50%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
+                                                 <div style="width: 100%; height: 100%; background-image: url('<?php echo base_url('assets/sso_files/8.png')?>'); background-size: 70%;background-position:center; background-repeat: no-repeat; border-radius: 0px;">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#ffc107;">
-                                            Sistem
-                                            <br>Pelayanan Pengaduan Keluhan Civitas Akademik Universitas Jember
+                                            sistem web 8
+                                            <br><span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"><b>UC3</b></div>
+                                        <div class="tile-label"><b>WEB 8</b></div>
                                         <span class="tile-badge bg-darkRed mif-star-full"></span>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <p class="padding10 bg-transparent no-tablet">
-                            <a href="https://kawanda.unej.ac.id/index.php/s/ZMNQZ29g2Rs3FtL">
+                            <a href="#">
                                 <button class="image-button small-button primary">
-                                    Manual Sister
+                                    info 1
                                     <span class="icon mif-file-pdf bg-darkCobalt"></span>
                                 </button>
                             </a>
-                            <a href="https://kawanda.unej.ac.id/index.php/s/mxFImSpS6BGW2ha">
+                            <a href="h#">
                                 <button class="image-button small-button primary">
-                                    Koneksi WiFi ID
+                                    info 2
                                     <span class="icon mif-wifi-connect bg-darkCobalt"></span>
                                 </button>
                             </a>
-                            <a href="https://kawanda.unej.ac.id/index.php/s/gwzaOYhjHXCzBJy">
+                            <a href=#">
                                 <button class="image-button small-button primary">
-                                    &nbsp;&nbsp;&nbsp;Blog UNEJ
+                                    info 3
                                     <span class="icon mif-film bg-darkCobalt"></span>
                                 </button>
                             </a>
-                            <a href="https://kawanda.unej.ac.id/index.php/s/XBjgHJr0lsyxPyn">
+                            <a href="#">
                                 <button class="image-button small-button primary">
-                                    Tutorial Kawanda
+                                    Tinfo 4
                                     <span class="icon mif-film bg-darkCobalt"></span>
                                 </button>
                             </a>
