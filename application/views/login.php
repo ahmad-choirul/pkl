@@ -137,9 +137,19 @@
                 </div>
             </div>
             <div id="header">
-                <div class="image-container"><a href="#"><img 
- src="<?php echo base_url('assets/sso_files/header.png') ?>"
-               style="max-width:60%;margin:0px auto;"></a></div>
+<nav class="navbar-inverse">
+         <div class="container">
+            <div class="row" style="background-color: #252525">
+               <div class="col-md-2">  
+                  <img style="max-width:10%;margin:0px auto;float: left;" class="img-responsive center" src="<?php echo base_url("assets/sso_files/logo.png"); ?>" >
+               </div>
+               <div class="col-md-8">
+                  <h1 class="white text-center"><b>SISTEM INFORMASI SATU PINTU</b></h1>
+                  <h4 class="white text-center"><b>KEMENTRIAN AGAMA JEMBER</b></h4>
+               </div>
+            </div>
+         </div>
+      </nav> 
             </div>
             <div id="content" class="fl-screenNavigator-scroll-containere flex-grid">
                 <div class="row">
