@@ -26,10 +26,12 @@
 
       <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
       <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-        <script src="<?php echo base_url('sets/sso_files/zxcvbn.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('sets/sso_files/jquery.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('sets/sso_files/zmetro.js') ?>" type="text/javascript"></script>
-        <script src="<?php echo base_url('sets/sso_files/jquery_002.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/sso_files/zxcvbn.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/sso_files/jquery.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/sso_files/zmetro.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/sso_files/jquery_002.js') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/sso_files/jquery.min.js.download') ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/sso_files/metro.js.download') ?>" type="text/javascript"></script>
         <style>
             .app-bar-element {
                 padding: 0px !important;
