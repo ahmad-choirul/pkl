@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class=" js no-mobile desktop no-ie ff ff62 root-section gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius no-cssreflections csstransforms csstransitions no-touch no-retina fontface domloaded w-1366 gt-240 gt-320 gt-480 gt-640 gt-768 gt-800 gt-1024 gt-1280 lt-1440 lt-1680 lt-1920 no-portrait landscape" id="search-page"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">>
+<html class=" js no-mobile desktop no-ie ff ff62 root-section gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius no-cssreflections csstransforms csstransitions no-touch no-retina fontface domloaded w-1366 gt-240 gt-320 gt-480 gt-640 gt-768 gt-800 gt-1024 gt-1280 lt-1440 lt-1680 lt-1920 no-portrait landscape" id="search-page"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,6 +23,9 @@
         <link href="<?php echo base_url('assets/sso_files/metro-icons.css') ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('assets/sso_files/metro-responsive.css') ?>" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url('assets/sso_files/metro-schemes.css') ?>" rel="stylesheet" type="text/css" />
+
+      <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
+      <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
         <script src="<?php echo base_url('sets/sso_files/zxcvbn.js') ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('sets/sso_files/jquery.js') ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('sets/sso_files/zmetro.js') ?>" type="text/javascript"></script>
@@ -139,25 +142,27 @@
             <div id="header">
 <nav class="navbar-inverse">
          <div class="container">
-            <div class="row" style="background-color: #252525">
+            <div class="row" style="margin-top: 25px">
+
                <div class="col-md-2">  
-                  <img style="max-width:10%;margin:0px auto;float: left;" class="img-responsive center" src="<?php echo base_url("assets/sso_files/logo.png"); ?>" >
+                  <img style="max-width:12%;margin:0px auto;float: left;" class="img-responsive center" src="<?php echo base_url("assets/sso_files/logo.png"); ?>" >
                </div>
                <div class="col-md-8">
-                  <h1 class="white text-center"><b>SISTEM INFORMASI SATU PINTU</b></h1>
-                  <h4 class="white text-center"><b>KEMENTRIAN AGAMA JEMBER</b></h4>
+                  <h1 class="white text-center" style="color: white"><b>&nbsp;SISTEM INFORMASI SATU PINTU</b></h1>
+                  <h4 class="white text-center" style="color: white"><b>&nbsp;&nbsp;KEMENTRIAN AGAMA JEMBER</b></h4>
+                  <br>
                </div>
             </div>
          </div>
       </nav> 
             </div>
-            <div id="content" class="fl-screenNavigator-scroll-containere flex-grid">
+            <div id="content" class="fl-screenNavigator-scroll-containere flex-grid" style="margin-top: 25px">
                 <div class="row">
                     <div class="cell">
                         <div class="box fl-panel" id="login">
                             <form action="<?php echo site_url('Clogin/proses'); ?>" method="post" id="fm1">
                                 <div class="image-container">
-                                    <img src="<?php echo base_url('assets/sso_files/key.svg') ?>">
+                                    <img src="<?php echo base_url('assets/sso_files/key.png') ?>">
                                 </div>
                                 <div style="display:table;border-collapse: separate;border-spacing: 10px;width:100%;">
                                     <div class="row fl-controls-left" style="display:table-row">
