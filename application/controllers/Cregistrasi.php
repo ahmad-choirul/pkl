@@ -16,9 +16,7 @@ function registrasi()
 	{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		 $passwordx = md5($password);
-		 echo $username;
-		 echo $passwordx;
+		 $passwordx = md5($password);	 
 $data = array(
 			'id' => null,
 			'username' => $username,
@@ -26,8 +24,7 @@ $data = array(
     );
 		$inser = $this->Madd->registrasi($data);
 		if ($inser > 0) {
-			echo "berhasil input";
-			 redirect('Clogin');
+			 redirect('Clogin','refresh');
 		}else {
 			echo "gagal input";
 		}

@@ -218,7 +218,7 @@
                                             <br>KEMENAG
                                             <br> <span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"> <b>WEB 1</b>
+                                        <div class="tile-label"> <b>masuk ke sistem</b>
                                         </div>
                                     </div>
                                 </div>
