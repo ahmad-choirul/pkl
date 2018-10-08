@@ -142,26 +142,19 @@
                     </div>
                 </div>
             </div>
-            <div id="header">
-                <nav class="navbar-inverse">
-                    <div class="container">
-                        <div class="row" style="margin-top: 25px">
-                            <div class="col-md-2">
-                                <img style="max-width:12%;margin:0px auto;float: left;" class="img-responsive center" src=" <?php echo base_url('assets/sso_files/logo.png ') ?>">
-                            </div>
-                            <div class="col-md-8">
-                                <h1 class="white text-center" style="color: white">
-                                    <b>&nbsp;SISTEM INFORMASI SATU PINTU</b>
-                                </h1>
-                                <h4 class="white text-center" style="color: white">
-                                    <b>&nbsp;&nbsp;KEMENTRIAN AGAMA JEMBER</b>
-                                </h4>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
+
+            <div class="no-pc">
+                <div class="row" style="margin-top: 25px">
+                    <img style="max-width:100%;" src=" <?php echo base_url('assets/sso_files/logo2.png ') ?>">
+                </div>
             </div>
+
+            <div class="no-tablet">
+                <div class="row" style="margin-top: 25px">
+                    <img style="max-width:80%;" src=" <?php echo base_url('assets/sso_files/logo2.png ') ?>">
+                </div>
+            </div>
+
             <div id="content" class="fl-screenNavigator-scroll-containere flex-grid" style="margin-top: 25px">
                 <div class="row">
                     <div class="cell">
@@ -173,7 +166,7 @@
                                 <div style="display:table;border-collapse: separate;border-spacing: 10px;width:100%;">
                                     <div class="row fl-controls-left" style="display:table-row">
                                         <div style="display:table-cell">
-                                            <label for="username" class="fl-label"> <span class="accesskey">U</span>sername:</label>
+                                            <p for="username" class="fl-label"> <span class="accesskey">U</span>sername:</p>
                                         </div>
                                         <div style="display:table-cell">
                                             <input type="text" name="username" class="form-control" placeholder="Username" /> <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -181,7 +174,7 @@
                                     </div>
                                     <div class="row fl-controls-left" style="display:table-row">
                                         <div style="display:table-cell">
-                                            <label for="password" class="fl-label"> <span class="accesskey">P</span>assword:</label>
+                                            <p for="password" class="fl-label"> <span class="accesskey">P</span>assword:</p>
                                         </div>
                                         <div style="display:table-cell">
                                             <input type="password" name="password" class="form-control" placeholder="Password" /> <span class="glyphicon glyphicon-lock form-control-feedback"></span>
