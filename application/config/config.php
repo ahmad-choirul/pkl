@@ -1,6 +1,27 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+//$config['base_url'] 		= 'http://192.168.237.66/suratkemenag';
+$config['base_url'] 		= 'http://localhost/pkl';
+// $config['base_url'] 		= 'http://192.168.0.107/suratkemenag';
+
+
+$config['nama'] 			= 'Aplikasi Surat';
+$config['kd_kwl']			= 'Kab. Tuban';
+$config['kanwil']			= 'Kanwil Kementerian Agama Jatim';
+$config['kode_kabko']		= '1317';
+
+$config['ip_server']		= 'localhost';
+$config['tahun']			= '2018';
+
+$config['nama_level_0']		= 'KEMENTERIAN AGAMA REPUBLIK INDONESIA';
+$config['nama_level_1']		= 'KANTOR KEMENTERIAN AGAMA';
+$config['nama_level_2']		= 'KABUPATEN TUBAN';
+$config['alamat_1']			= 'Jalan Doktor Wahidin Sudiro Husodo 47, Latsari';
+$config['alamat_2']			= 'Telp. (0356)321031 Email kabtuban@kemenag.go.id';
+$config['alamat_3']			= 'TUBAN 62314';
+$config['alamat_4']			= '';
+/*
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -17,7 +38,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------

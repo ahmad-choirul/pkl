@@ -32,8 +32,8 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('Dashboard2') ?>">
-                    <i class="fa fa-calendar"></i> <span>Dashboard 2</span></i>
+                <a href="<?php echo site_url('suratkemenag/auth') ?>">
+                    <i class="fa fa-envelope"></i> <span>aplikasi surat</span></i>
                 </a>
             </li>
             <li>
@@ -43,7 +43,7 @@
             </li>
             <li>
                 <a href="<?php echo site_url('tampildua') ?>">
-                    <i class="fa fa-envelope"></i> <span>tampilan dua</span></i>
+                    <i class="fa fa-calendar"></i> <span>tampilan dua</span></i>
                 </a>
             </li>
             <li>

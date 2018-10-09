@@ -5,7 +5,6 @@ class Dashboard2 extends CI_Controller {
 
 	public function index()
 	{
-		$data['judul']= "Dashboard2";
-		$this->load->view('dashboard2',$data);
+		$this->load->view('suratkemenag/auth');
 	}
 }

@@ -1,0 +1,1 @@
+<img src='<?php echo base_url(); ?>assets/theme/img/mailcenter.jpg' width="100%">
