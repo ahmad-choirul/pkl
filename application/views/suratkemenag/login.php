@@ -113,7 +113,7 @@
     </div>
 
     <div class="footer-copyright">
-            <p>© 2018 <?php if(date("Y")!='2018') { echo "- ".date("Y"); } ?> Divisi IT Kemenag Jatim. by <a href="https://api.whatsapp.com/send?phone=6285645862323&text=AplikasiSuratKabko"><b>Fitri</b>&nbsp(klik WA)</a></p>
+            <p>© 2018 <?php if(date("Y")!='2018') { echo "- ".date("Y"); } ?> Divisi IT Kemenag Jatim.
     </div>
 <script src="<?php echo base_url(); ?>assets/theme/js/lib/input-mask/jquery.mask.min.js"></script>
 
