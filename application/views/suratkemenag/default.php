@@ -89,7 +89,7 @@
 	            <span>toggle menu</span>
 	        </button>
 	        <div class="site-header-content">
-	        	<?php $this->load->view('header-notif-profile'); ?>
+	        	<?php $this->load->view('suratkemenag/header-notif-profile'); ?>
 	        </div><!--.site-header-content-->
 	    </div><!--.container-fluid-->
 	</header><!--.site-header-->

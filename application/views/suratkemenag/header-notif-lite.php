@@ -1,6 +1,6 @@
 <div class="site-header-content-in">
     <div class="site-header-shown">
-            <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline" href="<?php echo base_url(); ?>auth/logout">
+            <a class="btn btn-nav btn-rounded btn-inline btn-danger-outline" href="<?php echo base_url(); ?>suratkemenag/auth/logout">
 	                            LogOut
 	                        </a>
     </div>

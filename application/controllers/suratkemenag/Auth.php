@@ -21,13 +21,14 @@ class Auth extends CI_Controller {
 	function __construct() 
     {
         parent::__construct();
+        $this->load->library('session');
 	}
 
 	public function index()
 	{
     	$logged_in = $this->session->userdata('logged_in'); 
 		if (!$logged_in['id']){ $this->login(); }
-		else { redirect('suratkemenag/dashboard'); }
+		else { redirect('suratkemenag/dashboard','refresh'); }
 	}
 
 	public function login()
@@ -68,8 +69,10 @@ class Auth extends CI_Controller {
 					'id' => $result->id,
 				);
 				// Add user data in session
-				$this->session->set_userdata('logged_in', $session_data);
-				redirect('suratkemenag/dashboard');
+				$this->session->set_userdata('logged_in',$session_data);
+				$this->cekses();
+				
+				redirect('suratkemenag/dashboard','refresh');
 			} 
 			else 
 			{
@@ -86,7 +89,7 @@ class Auth extends CI_Controller {
 		$sess_array = array(
 		'username' => ''
 		);
-		$this->session->unset_userdata('logged_in', $sess_array);
+		$this->session->unset_userdata('logged_in',$sess_array);
 		$this->session->set_flashdata('notif', 'Logout Berhasil');
 				redirect('suratkemenag/auth/login/');
 	}
@@ -113,7 +116,7 @@ class Auth extends CI_Controller {
 			$data['state'] = $crud->getState();
 			$data['table'] = true;
 			$output->data=$data;
-			$this->load->view('default',$output);
+			$this->load->view('suratkemenag/default',$output);
 		} catch(Exception $e) {
 			if($e->getCode() == 14) //The 14 is the code of the "You don't have permissions" error on grocery CRUD.
 			{  redirect('suratkemenag/auth/logout'); }

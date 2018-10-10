@@ -123,9 +123,9 @@
 	                            <img src="<?php echo base_url(); ?>assets/theme/img/gear.png" alt="">
 	                        </button>
 	                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-	                            <a class="dropdown-item"  href="<?php echo base_url().'auth/profile/edit/'.$logged_in['id']; ?>"><span class="font-icon glyphicon glyphicon-cog"></span>Settings</a>
+	                            <a class="dropdown-item"  href="<?php echo base_url().'suratkemenag/auth/profile/edit/'.$logged_in['id']; ?>"><span class="font-icon glyphicon glyphicon-cog"></span>Settings</a>
 	                            <div class="dropdown-divider"></div>
-	                            <a class="dropdown-item" href="<?php echo base_url(); ?>auth/logout"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
+	                            <a class="dropdown-item" href="<?php echo base_url(); ?>suratkemenag/auth/logout"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
 	                        </div>
 	                    </div>
 	                </div><!--.site-header-shown-->

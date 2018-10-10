@@ -21,7 +21,7 @@ class Dashboard extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-
+$this->load->library('session');
 		// benchmark aja...
 		if (1==2) 
 		{
@@ -41,9 +41,16 @@ class Dashboard extends CI_Controller {
 	
 	function index()
 	{
-
-		$this->data['data']['main_page'] = 'suratkemenag/dashboard/selamat_datang';
-		$this->load->view('default',$this->data);
+$logged_in = $this->session->userdata('logged_in'); 
+	    	echo "username : ".$logged_in['username']."<br>";
+	    	echo "nama : ".$logged_in['name']."<br>";
+	    	echo "id_rules : ".$logged_in['id_rules']."<br>";
+	    	echo "id_seksi : ".$logged_in['id_seksi']."<br>";
+	    	echo "id_bidang : ".$logged_in['id_bidang']."<br>";
+	    	echo "id_jabatan : ".$logged_in['id_jabatan']."<br>";
+	    	echo "id : ".$logged_in['id']."<br>";
+		// $this->data['data']['main_page'] = 'suratkemenag/dashboard/selamat_datang';
+		// $this->load->view('suratkemenag/default',$this->data);
 	}
 	
 	function test()
