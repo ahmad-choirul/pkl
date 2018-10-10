@@ -161,10 +161,10 @@ class Kabko_disposisi extends CI_Controller {
 
 	function daftarsekre()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		//if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		//if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 		$this->load->library('grocery_CRUD');  
 		
@@ -204,16 +204,16 @@ class Kabko_disposisi extends CI_Controller {
 			return  wordwrap($row->nomor_surat.'/'.$row->perihal,70,'<br>');
 		});
 		$crud->callback_column('Proses',function($value,$row){
-			return  '<a href="'.base_url().'kabko_disposisi/prosesdisp/edit/'.$row->id.'">edit</a>  | <a href="'.base_url().'kabko_disposisi/prosesdisp/delete/'.$row->id.'">delete</a>';
+			return  '<a href="'.base_url().'suratkemenag/kabko_disposisi/prosesdisp/edit/'.$row->id.'">edit</a>  | <a href="'.base_url().'suratkemenag/kabko_disposisi/prosesdisp/delete/'.$row->id.'">delete</a>';
 		});
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 //sekre eof
@@ -221,10 +221,10 @@ class Kabko_disposisi extends CI_Controller {
 //es4
 	function eselon4()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		//if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		//if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 		$this->load->library('grocery_CRUD');  
 		
@@ -258,20 +258,20 @@ class Kabko_disposisi extends CI_Controller {
 		$crud->add_action('Disposisi', base_url().'proses.png', 'kabko_disposisi/proseseselon4/add');
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 
 	function proseseselon4()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		//if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		//if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 		$this->load->library('grocery_CRUD');  
 		
@@ -323,14 +323,14 @@ class Kabko_disposisi extends CI_Controller {
 		try{
 			$output = $crud->render();
 
-			$data['main_page'] = 'admin/admin';
+			$data['main_page'] = 'suratkemenag/admin/admin';
 			$data['state'] = $crud->getState();
 			$data['table'] = true;
 			$output->data=$data;
-			$this->load->view('default',$output);
+			$this->load->view('suratkemenag/default',$output);
 		} catch(Exception $e) {
 			if($e->getCode() == 14) //The 14 is the code of the "You don't have permissions" error on grocery CRUD.
-			{  redirect('kabko_disposisi/eselon4'); }
+			{  redirect('suratkemenag/kabko_disposisi/eselon4'); }
 			else { show_error($e->getMessage()); }
 		}
 		
@@ -338,10 +338,10 @@ class Kabko_disposisi extends CI_Controller {
 
 	function daftareselon4()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
 		//if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 		$this->load->library('grocery_CRUD');  
 		
@@ -371,7 +371,7 @@ class Kabko_disposisi extends CI_Controller {
 
 		$crud->columns('id_suratmasuk','id_pemberi','id_penerima','tanggal_disposisi','catatan_disposisi','Proses');
 		$crud->callback_column('Proses',function($value,$row){
-			return  '<a href="'.base_url().'kabko_disposisi/prosesdisp/edit/'.$row->id.'">edit</a>  | <a href="'.base_url().'kabko_disposisi/prosesdisp/delete/'.$row->id.'">delete</a>';
+			return  '<a href="'.base_url().'suratkemenag/kabko_disposisi/prosesdisp/edit/'.$row->id.'">edit</a>  | <a href="'.base_url().'suratkemenag/kabko_disposisi/prosesdisp/delete/'.$row->id.'">delete</a>';
 		});
 
 		$crud->display_as('id_suratmasuk','Nomor Surat / Perihal');
@@ -391,11 +391,11 @@ class Kabko_disposisi extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 //es4 eof
@@ -403,10 +403,10 @@ class Kabko_disposisi extends CI_Controller {
 //pelaksana
 	function pelaksana()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		//if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		//if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 		$this->load->library('grocery_CRUD');  
 		
@@ -432,23 +432,23 @@ class Kabko_disposisi extends CI_Controller {
 
 		$crud->columns('pengirim','nomor_surat','perihal','indeks_berkas','tanggal_surat','tanggal_rekam','id_sifat');
 
-		$crud->add_action('Disposisi', base_url().'proses.png', 'kabko_disposisi/prosespelaksana/add');
+		$crud->add_action('Disposisi', base_url().'proses.png', 'suratkemenag/kabko_disposisi/prosespelaksana/add');
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 
 	function prosespelaksana()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		//if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		//if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 
 		$this->load->library('grocery_CRUD');  
@@ -501,14 +501,14 @@ class Kabko_disposisi extends CI_Controller {
 		try{
 			$output = $crud->render();
 
-			$data['main_page'] = 'admin/admin';
+			$data['main_page'] = 'suratkemenag/admin/admin';
 			$data['state'] = $crud->getState();
 			$data['table'] = true;
 			$output->data=$data;
-			$this->load->view('default',$output);
+			$this->load->view('suratkemenag/default',$output);
 		} catch(Exception $e) {
 			if($e->getCode() == 14) //The 14 is the code of the "You don't have permissions" error on grocery CRUD.
-			{  redirect('kabko_disposisi/pelaksana'); }
+			{  redirect('suratkemenag/kabko_disposisi/pelaksana'); }
 			else { show_error($e->getMessage()); }
 		}
 		
@@ -516,10 +516,10 @@ class Kabko_disposisi extends CI_Controller {
 
 	function daftarpelaksana()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		//if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		//if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 		$this->load->library('grocery_CRUD');  
 		
@@ -547,7 +547,7 @@ class Kabko_disposisi extends CI_Controller {
 
 		$crud->columns('id_suratmasuk','id_pemberi','id_penerima','tanggal_disposisi','catatan_disposisi','Proses');
 		$crud->callback_column('Proses',function($value,$row){
-			return  '<a href="'.base_url().'kabko_disposisi/prosesdisp/edit/'.$row->id.'">edit</a>  | <a href="'.base_url().'kabko_disposisi/prosesdisp/delete/'.$row->id.'">delete</a>';
+			return  '<a href="'.base_url().'suratkemenag/kabko_disposisi/prosesdisp/edit/'.$row->id.'">edit</a>  | <a href="'.base_url().'suratkemenag/kabko_disposisi/prosesdisp/delete/'.$row->id.'">delete</a>';
 		});
 
 		$crud->display_as('id_suratmasuk','Nomor Surat / Perihal');
@@ -568,11 +568,11 @@ class Kabko_disposisi extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 //pelaksana eof
@@ -616,11 +616,11 @@ class Kabko_disposisi extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 
@@ -688,21 +688,21 @@ class Kabko_disposisi extends CI_Controller {
 		try{
 			$output = $crud->render();
 
-			$data['main_page'] = 'admin/admin';
+			$data['main_page'] = 'suratkemenag/admin/admin';
 			$data['state'] = $crud->getState();
 			$data['table'] = true;
 			$output->data=$data;
-			$this->load->view('default',$output);
+			$this->load->view('suratkemenag/default',$output);
 		} catch(Exception $e) {
 			if($e->getCode() == 14) //The 14 is the code of the "You don't have permissions" error on grocery CRUD.
-			{  redirect('dashboard'); }
+			{  redirect('suratkemenag/dashboard'); }
 			else { show_error($e->getMessage()); }
 		}
 		
 	}
 	function redirectafterdelete()
 	{
-		redirect('dashboard');
+		redirect('suratkemenag/dashboard');
 	}
 //all eof
 

@@ -37,7 +37,7 @@ class Kabko_suratmasuk extends CI_Controller {
 	    $logged_in = $this->session->userdata('logged_in');
 	    if(!isset($logged_in['id_rules']))
 	    {
-	    	redirect('/auth/logout/');
+	    	redirect('/suratkemenag/auth/logout/');
 	    }
 		$this->login = $this->session->userdata('logged_in');
 	}
@@ -45,10 +45,10 @@ class Kabko_suratmasuk extends CI_Controller {
 //sekre
 	function index()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		//if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		//if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 		$this->load->library('grocery_CRUD');  
 		
@@ -107,17 +107,17 @@ class Kabko_suratmasuk extends CI_Controller {
 			return '<input id="field-kode_kabko" class="form-control" name="kode_kabko" type="hidden" value="'.$this->config->item('kode_kabko').'" readonly>'.$this->config->item('kode_kabko');
 		});
 
-		//$crud->add_action('Cetak Disposisi', base_url().'disp.png', 'suratmasuk/cetakdisp');
-		$crud->add_action('Cetak Tanda Terima', base_url().'tt.png', 'kabko_suratmasuk/cetaktt');
+		//$crud->add_action('Cetak Disposisi', base_url().'disp.png', 'suratkemenag/suratmasuk/cetakdisp');
+		$crud->add_action('Cetak Tanda Terima', base_url().'tt.png', 'suratkemenag/kabko_suratmasuk/cetaktt');
 		$crud->add_action('Cetak Disposisi', base_url().'disp.png', '','ui-icon-image',array($this,'cetakdisp2'));
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'suratmasuk/suratmasuk';
+		$data['main_page'] = 'suratkemenag/suratmasuk/suratmasuk';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 
@@ -125,21 +125,21 @@ class Kabko_suratmasuk extends CI_Controller {
 	{
 		if($row->id_sifat==1)
 		{
-			return site_url('kabko_suratmasuk/cetakdispbiasa/').$primary_key;
+			return site_url('suratkemenag/kabko_suratmasuk/cetakdispbiasa/').$primary_key;
 		}
 		else
 		{
-			return site_url('kabko_suratmasuk/cetakdisp/').$primary_key;
+			return site_url('suratkemenag/kabko_suratmasuk/cetakdisp/').$primary_key;
 
 		}
 	}
 
 	function carisemua()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
 		//if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 		$this->load->library('grocery_CRUD');  
 		
@@ -178,54 +178,54 @@ class Kabko_suratmasuk extends CI_Controller {
 		$crud->unset_edit();
 		$crud->unset_delete();
 
-		$crud->add_action('Disposisi', base_url().'history.png', 'kabko_disposisi/history');
+		$crud->add_action('Disposisi', base_url().'history.png', 'suratkemenag/kabko_disposisi/history');
 		
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'suratmasuk/suratmasuk';
+		$data['main_page'] = 'suratkemenag/suratmasuk/suratmasuk';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 	}
 
 	function cetakdisp()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		//if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		//if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
-		$this->load->view('print/disposisi',$this->data);
+		$this->load->view('suratkemenag/print/disposisi',$this->data);
 	}
 
 	function cetakdispbiasa()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		//if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		//if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
-		$this->load->view('print/disposisibiasa',$this->data);
+		$this->load->view('suratkemenag/print/disposisibiasa',$this->data);
 	}
 
 	function cetaktt()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		//if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		//if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
-		$this->load->view('print/tt',$this->data);
+		$this->load->view('suratkemenag/print/tt',$this->data);
 	}
 
 	function rekamlama()
 	{
-		if($this->login['id_rules']==1001) { redirect('/errorpage/deny'); } //admin ga boleh
-		//if($this->login['id_rules']==1002) { redirect('/errorpage/deny'); } //sekre ga boleh
-		if($this->login['id_rules']==1003) { redirect('/errorpage/deny'); } //es4 ga boleh
-		if($this->login['id_rules']==1004) { redirect('/errorpage/deny'); } //pengguna ga boleh
+		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		//if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
+		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
+		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
 
 		$this->load->library('grocery_CRUD');  
 		
@@ -257,11 +257,11 @@ class Kabko_suratmasuk extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'suratmasuk/suratmasuk';
+		$data['main_page'] = 'suratkemenag/suratmasuk/suratmasuk';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 //sekre eof
@@ -308,17 +308,17 @@ class Kabko_suratmasuk extends CI_Controller {
 		$crud->unset_edit();
 		$crud->unset_delete();
 
-		$crud->add_action('Disposisi', base_url().'history.png', 'kabko_disposisi/history');
+		$crud->add_action('Disposisi', base_url().'history.png', 'suratkemenag/kabko_disposisi/history');
 		$crud->order_by('id','desc');
 		
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'suratmasuk/suratmasuk';
+		$data['main_page'] = 'suratkemenag/suratmasuk/suratmasuk';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 //all eof

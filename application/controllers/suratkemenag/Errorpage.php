@@ -41,13 +41,13 @@ class Errorpage extends CI_Controller {
 	
 	function index()
 	{
-		$this->load->view('error/deny');
+		$this->load->view('suratkemenag/error/deny');
 	}
 	
 	function deny()
 	{
-		$this->data['data']['main_page'] = 'error/deny';
-		$this->load->view('default',$this->data);
+		$this->data['data']['main_page'] = 'suratkemenag/error/deny';
+		$this->load->view('suratkemenag/default',$this->data);
 	}
 
 }

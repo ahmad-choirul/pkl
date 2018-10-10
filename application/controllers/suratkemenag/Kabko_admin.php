@@ -37,11 +37,11 @@ class Kabko_admin extends CI_Controller {
 	    $logged_in = $this->session->userdata('logged_in');
 	    if(!isset($logged_in['id_rules']))
 	    {
-	    	redirect('/auth/logout/');
+	    	redirect('/suratkemenag/auth/logout/');
 	    }
 	    elseif($logged_in['id_rules']!=1001)
 	    {
-	    	redirect('/dashboard');
+	    	redirect('/suratkemenag/dashboard');
 	    }
 		$this->login = $this->session->userdata('logged_in');
 
@@ -49,7 +49,7 @@ class Kabko_admin extends CI_Controller {
 
 	function index()
 	{
-		redirect('/kabko_admin/users');
+		redirect('/suratkemenag/kabko_admin/users');
 	}
 
 	function rules()
@@ -65,11 +65,11 @@ class Kabko_admin extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 	}
 
 	function users()
@@ -106,11 +106,11 @@ class Kabko_admin extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 	}
 
 	function kode()
@@ -128,11 +128,11 @@ class Kabko_admin extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 	}
 
 	function asal()
@@ -146,11 +146,11 @@ class Kabko_admin extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 	}
 
 	function sifat()
@@ -165,11 +165,11 @@ class Kabko_admin extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 	}
 
 	function seksi()
@@ -197,11 +197,11 @@ class Kabko_admin extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 	}
 
 	function jabatan()
@@ -217,11 +217,11 @@ class Kabko_admin extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 
@@ -249,11 +249,11 @@ class Kabko_admin extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 

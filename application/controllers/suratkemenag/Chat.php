@@ -38,7 +38,7 @@ class Chat extends CI_Controller {
 	    $logged_in = $this->session->userdata('logged_in');
 	    if(!isset($logged_in['id_rules']))
 	    {
-	    	redirect('/auth/logout/');
+	    	redirect('/suratkemenag/auth/logout/');
 	    }
 		$this->login = $this->session->userdata('logged_in');
 
@@ -81,8 +81,8 @@ class Chat extends CI_Controller {
 		$this->load->model('Model_chat');
 		$this->data['result'] = $this->Model_chat->get_chatroom();
 
-		$this->data['data']['main_page'] = 'chat/room';
-		$this->load->view('default',$this->data);
+		$this->data['data']['main_page'] = 'suratkemenag/chat/room';
+		$this->load->view('suratkemenag/default',$this->data);
 	}	
 
 	function personal()
@@ -108,8 +108,8 @@ class Chat extends CI_Controller {
 		$this->data['result'] = $this->Model_chat->get_chatpersonal($logged_in['id'],$this->uri->segment(3));
 		}
 		//else { $this->data['result'] = "hallo"; }
-		$this->data['data']['main_page'] = 'chat/personal';
-		$this->load->view('default',$this->data);
+		$this->data['data']['main_page'] = 'suratkemenag/chat/personal';
+		$this->load->view('suratkemenag/default',$this->data);
 	}
 
 	public function query(){  
