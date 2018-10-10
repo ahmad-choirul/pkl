@@ -41,6 +41,7 @@ $this->load->library('session');
 	
 	function index()
 	{
+
 $logged_in = $this->session->userdata('logged_in'); 
 	    	echo "username : ".$logged_in['username']."<br>";
 	    	echo "nama : ".$logged_in['name']."<br>";

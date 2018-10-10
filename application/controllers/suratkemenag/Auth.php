@@ -21,14 +21,13 @@ class Auth extends CI_Controller {
 	function __construct() 
     {
         parent::__construct();
-        $this->load->library('session');
 	}
 
 	public function index()
 	{
     	$logged_in = $this->session->userdata('logged_in'); 
 		if (!$logged_in['id']){ $this->login(); }
-		else { redirect('suratkemenag/dashboard','refresh'); }
+		else { redirect('suratkemenag/dashboard?w'); }
 	}
 
 	public function login()
@@ -45,7 +44,7 @@ class Auth extends CI_Controller {
 
 		if(isset($this->session->userdata['logged_in']))
 		{
-			redirect('suratkemenag/dashboard');
+			redirect('/suratkemenag/dashboard?w');
 		}
 		else 
 		{
@@ -54,7 +53,6 @@ class Auth extends CI_Controller {
 			'password' => $this->input->post('password')
 			);
 			$result = $this->Model_auth->login($data)->row();
-			var_dump($result);
 			
 			if ($result) 
 			{
@@ -69,15 +67,14 @@ class Auth extends CI_Controller {
 					'id' => $result->id,
 				);
 				// Add user data in session
-				$this->session->set_userdata('logged_in',$session_data);
+				$this->session->set_userdata('logged_in', $session_data);
+				redirect('/suratkemenag/dashboard?w','refresh');
 				$this->cekses();
-				
-				redirect('suratkemenag/dashboard','refresh');
 			} 
 			else 
 			{
 				$this->session->set_flashdata('notif', 'Username dan Password tidak sesuai');
-				redirect('suratkemenag/auth/login/error');
+				redirect('/suratkemenag/auth/login/error');
 			}
 		}
 	}
@@ -89,9 +86,9 @@ class Auth extends CI_Controller {
 		$sess_array = array(
 		'username' => ''
 		);
-		$this->session->unset_userdata('logged_in',$sess_array);
+		$this->session->unset_userdata('logged_in', $sess_array);
 		$this->session->set_flashdata('notif', 'Logout Berhasil');
-				redirect('suratkemenag/auth/login/');
+				redirect('/suratkemenag/auth/login/');
 	}
 
 

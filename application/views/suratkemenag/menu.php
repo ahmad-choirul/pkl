@@ -1,29 +1,20 @@
 <?php 
-
     $uri1=$this->uri->segment(1);
     $uri2=$this->uri->segment(2);
     $uri12=$uri1.$uri2;
-    $logged_in = $this->session->userdata('logged_in'); 
-	    	echo "username : ".$logged_in['username']."<br>";
-	    	echo "nama : ".$logged_in['name']."<br>";
-	    	echo "id_rules : ".$logged_in['id_rules']."<br>";
-	    	echo "id_seksi : ".$logged_in['id_seksi']."<br>";
-	    	echo "id_bidang : ".$logged_in['id_bidang']."<br>";
-	    	echo "id_jabatan : ".$logged_in['id_jabatan']."<br>";
-	    	echo "id : ".$logged_in['id']."<br>";
 ?>
 <style>
 .menuaktif { background-color: #ecf2f5; }
 .tableinfo { margin: 10px 0px 0px 0px; }
 .tableinfo td { padding-left: 20px; }
-</style> 	
+</style>
 
 <?php 
     $logged_in = $this->session->userdata('logged_in'); 
 	$q = "SELECT * FROM users_rules where id=".$logged_in['id_rules']." LIMIT 1;";
+
 	$query = $this->db->query($q);
 	$row = $query->row(0);
-
 ?>
 	<nav class="side-menu">
 		<?php
