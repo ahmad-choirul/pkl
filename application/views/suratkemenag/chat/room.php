@@ -83,7 +83,7 @@
               </div>
 
               <div class="chat-area-bottom">
-                  <form action="<?php echo base_url(); ?>chat/room" method="post" class="write-message">
+                  <form action="<?php echo base_url(); ?>suratkemenag/chat/room" method="post" class="write-message">
                     <div class="input-group">
                       <div class="form-group">
                         <div class="input-group" style="padding:10px 10px 10px ">
