@@ -20,6 +20,7 @@ $config['alamat_1']			= 'Jalan KH. WAHID HASYIM No. 1 Telepon 0331-486008';
 $config['alamat_2']			= 'Fax 0331-486008 Email kabjatim@kemenag.go.id';
 $config['alamat_3']			= 'JEMBER 68137';
 $config['alamat_4']			= '';
+$config['kode_kabko'] 			= '1317';
 /*
 /*
 |--------------------------------------------------------------------------
