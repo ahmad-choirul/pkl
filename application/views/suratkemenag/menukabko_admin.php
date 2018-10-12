@@ -9,14 +9,14 @@
         <span class="lbl">Menu Admin</span>
     </span>
     <ul>
-        <li <?php if($uri12=='kabko_adminusers') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>kabko_admin/users"><span class="lbl">Users</span></a></li>
-        <li <?php if($uri12=='kabko_adminrules') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>kabko_admin/rules"><span class="lbl">Rule User</span></a></li>
-        <li <?php if($uri12=='kabko_adminkode') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>kabko_admin/kode"><span class="lbl">Master Kode</span></a></li>
-        <li <?php if($uri12=='kabko_adminasal') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>kabko_admin/asal"><span class="lbl">Referensi Asal</span></a></li>
-        <li <?php if($uri12=='kabko_adminsifat') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>kabko_admin/sifat"><span class="lbl">Referensi Sifat</span></a></li>
-        <li <?php if($uri12=='kabko_adminseksi') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>kabko_admin/seksi"><span class="lbl">Referensi Seksi</span></a></li>
-        <li <?php if($uri12=='kabko_adminjabatan') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>kabko_admin/jabatan"><span class="lbl">Referensi Jabatan</span></a></li>
-        <li <?php if($uri12=='kabko_adminpengumuman') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>kabko_admin/pengumuman"><span class="lbl">Pengumuman</span></a></li>
+        <li <?php if($uri12=='suratkemenag/kabko_adminusers') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/users"><span class="lbl">Users</span></a></li>
+        <li <?php if($uri12=='ksuratkemenag/abko_adminrules') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/rules"><span class="lbl">Rule User</span></a></li>
+        <li <?php if($uri12=='suratkemenag/kabko_adminkode') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/kode"><span class="lbl">Master Kode</span></a></li>
+        <li <?php if($uri12=='suratkemenag/kabko_adminasal') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/asal"><span class="lbl">Referensi Asal</span></a></li>
+        <li <?php if($uri12=='suratkemenag/kabko_adminsifat') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/sifat"><span class="lbl">Referensi Sifat</span></a></li>
+        <li <?php if($uri12=='suratkemenag/kabko_adminseksi') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/seksi"><span class="lbl">Referensi Seksi</span></a></li>
+        <li <?php if($uri12=='suratkemenag/kabko_adminjabatan') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/jabatan"><span class="lbl">Referensi Jabatan</span></a></li>
+        <li <?php if($uri12=='suratkemenag/kabko_adminpengumuman') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/pengumuman"><span class="lbl">Pengumuman</span></a></li>
     </ul>
 </li>
 
@@ -26,12 +26,12 @@
         <span class="lbl">Chat</span>
     </span>
     <ul>
-        <li <?php if($uri12=='chatroom') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>chat/room"><span class="lbl">Room</span></a></li>
+        <li <?php if($uri12=='chatroom') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/chat/room"><span class="lbl">Room</span></a></li>
         <!--<li <?php if($uri12=='chatpersonal') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>chat/personal"><span class="lbl">Personal</span></a></li>-->
     </ul>
 </li>
-<li class="green <?php if($uri1=='pengumuman') { echo 'menuaktif'; } ?>">
-    <a href="<?php echo base_url(); ?>pengumuman/">
+<li class="green <?php if($uri1=='suratkemenag/pengumuman') { echo 'menuaktif'; } ?>">
+    <a href="<?php echo base_url(); ?>suratkemenag/pengumuman/">
         <span class="fa fa-bullhorn"></span>
         <span class="lbl">Pengumuman</span>
     </a>

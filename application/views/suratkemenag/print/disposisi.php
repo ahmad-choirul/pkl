@@ -1,7 +1,7 @@
 <?php 
   $disposisi  = $this->db->query("select s.id,a.asal_surat,s.pengirim,s.nomor_surat,s.perihal,s.indeks_berkas,
 s.tanggal_surat,s.tanggal_rekam,f.nama_sifat,s.lampiran,s.id_user, s.id_sifat
-from t_suratmasuk s, ref_asalsurat a, ref_sifat f where s.id_asalsurat=a.id and s.id_sifat=f.id and s.id='".$this->uri->segment(3)."'")->row();
+from t_suratmasuk s, ref_asalsurat a, ref_sifat f where s.id_asalsurat=a.id and s.id_sifat=f.id and s.id='".$this->uri->segment(4)."'")->row();
 ?>
 <body  onload="window.print()">
 <style type="text/css">
@@ -69,6 +69,7 @@ from t_suratmasuk s, ref_asalsurat a, ref_sifat f where s.id_asalsurat=a.id and 
     <td colspan="3" align="center">PERHATIAN : Dilarang memisahkan sehelai surat pun yang digabung dalam berkas ini</td>
   </tr>
   <tr>
+    
     <td width="180px">Nomor Surat : <?php echo $disposisi->nomor_surat; ?></td>
     <td colspan="2">Status : <div class="kotakcek"></div>Asli&nbsp;&nbsp;&nbsp;&nbsp; <div class="kotakcek"></div>Tembusan</td>
   </tr>

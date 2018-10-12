@@ -1,21 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Terimakasi telah menggunkan aplikasi ini
- *
- * Aplikasi ini dibuat untuk digratiskan dengan ijin sebelumnya
- *
- * Apabila anda membutuhkan asistensi silahkan kontak ke +6285645862323 (FITRI)
- *
- * Kami juga menerima pembuatan aplikasi untuk kepentingan komersial
- *
- * @category   AplikasiSurat
- * @author     Original Author <raihani.fitri@gmail.com>
- * @copyright  2017-2018
- * @version    AS-v0.1-KabKo
- *
- * MENYEBARKAN / MENCOPY / MEMASANG DI TEMPAT LAIN TANPA IJIN PEMBUAT ADALAH TIDAK TERPUJI
- *
- */
+
 class Pengumuman extends CI_Controller {
 	function __construct() 
     {
@@ -37,7 +21,7 @@ class Pengumuman extends CI_Controller {
 	    $logged_in = $this->session->userdata('logged_in');
 	    if(!isset($logged_in['id_rules']))
 	    {
-	    	redirect('/auth/logout/');
+	    	redirect('/suratkemenag/auth/logout/');
 	    }
 		$this->login = $this->session->userdata('logged_in');
 	}
@@ -64,11 +48,11 @@ class Pengumuman extends CI_Controller {
 			//crud->callback_column('menu_title',array($this,'_callback_webpage_url'));
 		$output = $crud->render();
 
-		$data['main_page'] = 'admin/admin';
+		$data['main_page'] = 'suratkemenag/admin/admin';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
-		$this->load->view('default',$output);
+		$this->load->view('suratkemenag/default',$output);
 		
 	}
 

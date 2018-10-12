@@ -1,21 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Terimakasi telah menggunkan aplikasi ini
- *
- * Aplikasi ini dibuat untuk digratiskan dengan ijin sebelumnya
- *
- * Apabila anda membutuhkan asistensi silahkan kontak ke +6285645862323 (FITRI)
- *
- * Kami juga menerima pembuatan aplikasi untuk kepentingan komersial
- *
- * @category   AplikasiSurat
- * @author     Original Author <raihani.fitri@gmail.com>
- * @copyright  2017-2018
- * @version    AS-v0.1-KabKo
- *
- * MENYEBARKAN / MENCOPY / MEMASANG DI TEMPAT LAIN TANPA IJIN PEMBUAT ADALAH TIDAK TERPUJI
- *
- */
+
 class Kabko_suratkeluar extends CI_Controller {
 	function __construct() 
     {
@@ -131,7 +115,6 @@ class Kabko_suratkeluar extends CI_Controller {
 
 		//id_klasifikasi dihilangkan.
 		$crud->required_fields('id_tujuansurat','id_sifat','id_user','id_jenissurat','penerima','perihal','indeks_surat','lampiran','file_suratkeluar','tanggal_rekam','tanggal_surat','kode_kabko');
-
 		$crud->add_fields(array('id_tujuansurat','penerima','id_jenissurat','id_kodeklasifikasi','perihal','indeks_surat','id_sifat','lampiran','tanggal_surat','id_user','file_suratkeluar','tanggal_rekam','nomor_surat','status_BO','catatan_BO','kode_kabko')); 
 		$crud->edit_fields(array('id_tujuansurat','penerima','id_jenissurat','id_kodeklasifikasi','perihal','indeks_surat','id_sifat','lampiran','tanggal_surat','id_user','file_suratkeluar','tanggal_rekam','status_BO','catatan_BO','kode_kabko'));
 
@@ -142,12 +125,11 @@ class Kabko_suratkeluar extends CI_Controller {
 
 		$output = $crud->render();
 
-		$data['main_page'] = 'suratkeluar/suratkeluar';
+		$data['main_page'] = 'suratkemenag/suratkeluar/suratkeluar';
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;
 		$this->load->view('suratkemenag/default',$output);
-		
 	}
 
 	function insertsuratkeluar($post_array) {

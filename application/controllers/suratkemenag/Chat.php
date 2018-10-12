@@ -1,21 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Terimakasi telah menggunkan aplikasi ini
- *
- * Aplikasi ini dibuat untuk digratiskan dengan ijin sebelumnya
- *
- * Apabila anda membutuhkan asistensi silahkan kontak ke +6285645862323 (FITRI)
- *
- * Kami juga menerima pembuatan aplikasi untuk kepentingan komersial
- *
- * @category   AplikasiSurat
- * @author     Original Author <raihani.fitri@gmail.com>
- * @copyright  2017-2018
- * @version    AS-v0.1-KabKo
- *
- * MENYEBARKAN / MENCOPY / MEMASANG DI TEMPAT LAIN TANPA IJIN PEMBUAT ADALAH TIDAK TERPUJI
- *
- */
+
 class Chat extends CI_Controller {
 
 	function __construct()

@@ -9,6 +9,7 @@ $config['base_url'] 		= 'http://localhost/pkl';
 $config['nama'] 			= 'Aplikasi Surat';
 $config['kd_kwl']			= 'Kab. Jember';
 $config['kanwil']			= 'Kanwil Kementerian Agama Jatim';
+$config['kode_kabko']		= '1317';
 
 $config['ip_server']		= 'localhost';
 $config['tahun']			= '2018';
@@ -20,7 +21,6 @@ $config['alamat_1']			= 'Jalan KH. WAHID HASYIM No. 1 Telepon 0331-486008';
 $config['alamat_2']			= 'Fax 0331-486008 Email kabjatim@kemenag.go.id';
 $config['alamat_3']			= 'JEMBER 68137';
 $config['alamat_4']			= '';
-$config['kode_kabko'] 			= '1317';
 /*
 /*
 |--------------------------------------------------------------------------

@@ -51,13 +51,13 @@
                     <a class="app-bar-element"></a>
                     <div class="tile-container " style="border-radius: 5px;background-color: #1b1a1a">
                         <a class="app-bar-element"></a>
-                        <a href="#">
+                        <a href="<?php echo site_url('suratkemenag/auth') ?>">
                             <div class="tile fg-white" style="background-color:#c62828;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
                                         <div class="kotakandro" style="background-image: url(' <?php echo base_url('assets/sso_files/1.png')?>');"></div>
                                     </div>
-                                    <div class="tile-label"> <b>WEB 1</b>
+                                    <div class="tile-label"> <b>Sistem Surat</b>
                                     </div>
                                 </div>
                             </div>
@@ -187,19 +187,20 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="row btn-row" style="text-align:left;">
-                                    <button type="submit" class="button primary">Log in</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <div class="row btn-row" style="text-align:center;">
+                                    <button type="submit" class="button primary">Log in</button>
+                                    <!-- &nbsp;&nbsp;&nbsp;&nbsp;
                                     <a href=" <?php echo base_url('Cregistrasi'); ?>">
                                  <button class="image-button danger" type="button">Register <span class="icon mif-question bg-darkRed"></span>
-                                 </button>
-                              </a>
+                                 </button> -->
+                              <!-- </a> -->
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="cell colspan8 no-tablet" style="border-radius: 5px;background-color: #1b1a1a">
                         <div class="tile-container">
-                            <a href="#">
+                            <a href="<?php echo site_url('suratkemenag/auth') ?>">
                                 <div class="tile fg-white" style="background-color:#c62828;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
@@ -207,11 +208,11 @@
                                                 <div class="kotakweb" style="background-image: url('<?php echo base_url('assets/sso_files/1.png')?>');"></div>
                                             </div>
                                         </div>
-                                        <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#c62828;">sistem web 1
+                                        <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#c62828;">Sistem Surat
                                             <br>KEMENAG
                                             <br> <span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"> <b>masuk ke sistem</b>
+                                        <div class="tile-label"> <b>Sistem Surat</b>
                                         </div>
                                     </div>
                                 </div>
@@ -329,7 +330,7 @@
                                 </div>
                             </a>
                         </div>
-                        <p class="padding10 bg-transparent no-tablet">
+                       <!--  <p class="padding10 bg-transparent no-tablet">
                             <a href="#">
                            <button class="image-button small-button primary">info 1 <span class="icon mif-file-pdf bg-darkCobalt"></span>
                            </button>
@@ -348,7 +349,7 @@
                     </div>
                 </div>
                 <br>
-                <p class="padding10 bg-transparent no-pc "></p>
+                <p class="padding10 bg-transparent no-pc "></p> -->
             </div>
             <div>
                 <script src=" <?php echo base_url( 'assets/sso_files/head.js') ?>" type="text/javascript"></script>

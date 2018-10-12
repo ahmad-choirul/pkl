@@ -1,37 +1,21 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Terimakasi telah menggunkan aplikasi ini
- *
- * Aplikasi ini dibuat untuk digratiskan dengan ijin sebelumnya
- *
- * Apabila anda membutuhkan asistensi silahkan kontak ke +6285645862323 (FITRI)
- *
- * Kami juga menerima pembuatan aplikasi untuk kepentingan komersial
- *
- * @category   AplikasiSurat
- * @author     Original Author <raihani.fitri@gmail.com>
- * @copyright  2017-2018
- * @version    AS-v0.1-KabKo
- *
- * MENYEBARKAN / MENCOPY / MEMASANG DI TEMPAT LAIN TANPA IJIN PEMBUAT ADALAH TIDAK TERPUJI
- *
- */
+
 class Kabko_suratmasuk extends CI_Controller {
 	function __construct() 
     {
         parent::__construct();
 
 		// benchmark aja...
-		if (1==2) 
-		{
-			$sections = array(
-				'benchmarks' => TRUE, 'memory_usage' => TRUE, 
-				'config' => FALSE, 'controller_info' => FALSE, 'get' => FALSE, 'post' => FALSE, 'queries' => FALSE, 
-				'uri_string' => FALSE, 'http_headers' => FALSE, 'session_data' => FALSE
-			); 
-			$this->output->set_profiler_sections($sections);
-			$this->output->enable_profiler(TRUE);
-		}
+		// if (1==2) 
+		// {
+		// 	$sections = array(
+		// 		'benchmarks' => TRUE, 'memory_usage' => TRUE, 
+		// 		'config' => FALSE, 'controller_info' => FALSE, 'get' => FALSE, 'post' => FALSE, 'queries' => FALSE, 
+		// 		'uri_string' => FALSE, 'http_headers' => FALSE, 'session_data' => FALSE
+		// 	); 
+		// 	$this->output->set_profiler_sections($sections);
+		// 	$this->output->enable_profiler(TRUE);
+		// }
 
 		$this->data = null;
 	    $logged_in = $this->session->userdata('logged_in');
@@ -118,7 +102,6 @@ class Kabko_suratmasuk extends CI_Controller {
 		$data['table'] = true;
 		$output->data=$data;
 		$this->load->view('suratkemenag/default',$output);
-		
 	}
 
 	function cetakdisp2($primary_key , $row)
@@ -130,7 +113,6 @@ class Kabko_suratmasuk extends CI_Controller {
 		else
 		{
 			return site_url('suratkemenag/kabko_suratmasuk/cetakdisp/').$primary_key;
-
 		}
 	}
 
@@ -196,7 +178,7 @@ class Kabko_suratmasuk extends CI_Controller {
 		//if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
 		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
 		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
-
+// echo($this->data);
 		$this->load->view('suratkemenag/print/disposisi',$this->data);
 	}
 

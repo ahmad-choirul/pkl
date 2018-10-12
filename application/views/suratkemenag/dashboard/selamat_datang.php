@@ -101,10 +101,10 @@
 	</div><!--.col- -->
 
 	
-	<div class="col-lg-3 col-md-6 col-sm-6">
+	<!-- <div class="col-lg-3 col-md-6 col-sm-6">
 		<section class="box-typical">
 			<header class="box-typical-header-sm" style="color:#08cc05">UPDATE INFO : </header>
 			<div style="padding-left: 10px"><b>2018-05-12 13:25</b><br>Aplikasi Final KabKo v.0.1<br></div>
 		</section><!--.box-typical-->
-	</div><!--.col- -->
+	</div><!--.col- --> -->
 </div>

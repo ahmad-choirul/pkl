@@ -1,21 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * Terimakasi telah menggunkan aplikasi ini
- *
- * Aplikasi ini dibuat untuk digratiskan dengan ijin sebelumnya
- *
- * Apabila anda membutuhkan asistensi silahkan kontak ke +6285645862323 (FITRI)
- *
- * Kami juga menerima pembuatan aplikasi untuk kepentingan komersial
- *
- * @category   AplikasiSurat
- * @author     Original Author <raihani.fitri@gmail.com>
- * @copyright  2017-2018
- * @version    AS-v0.1-KabKo
- *
- * MENYEBARKAN / MENCOPY / MEMASANG DI TEMPAT LAIN TANPA IJIN PEMBUAT ADALAH TIDAK TERPUJI
- *
- */
+
 class Kabko_disposisi extends CI_Controller {
 	function __construct() 
     {
@@ -80,7 +64,7 @@ class Kabko_disposisi extends CI_Controller {
 		$crud->unset_delete();
 		$crud->unset_read();
 
-		$crud->add_action('Disposisi', base_url().'proses.png', 'kabko_disposisi/prosessekre/add');
+		$crud->add_action('Disposisi', base_url().'proses.png', 'suratkemenag/kabko_disposisi/prosessekre/add');
 
 		$output = $crud->render();
 
@@ -146,7 +130,7 @@ class Kabko_disposisi extends CI_Controller {
 		try{
 			$output = $crud->render();
 
-			$data['main_page'] = 'admin/admin';
+			$data['main_page'] = 'suratkemenag/admin/admin';
 			$data['state'] = $crud->getState();
 			$data['table'] = true;
 			$output->data=$data;
@@ -255,7 +239,7 @@ class Kabko_disposisi extends CI_Controller {
 
 		$crud->columns('pengirim','nomor_surat','perihal','indeks_berkas','tanggal_surat','tanggal_rekam','id_sifat');
 
-		$crud->add_action('Disposisi', base_url().'proses.png', 'kabko_disposisi/proseseselon4/add');
+		$crud->add_action('Disposisi', base_url().'proses.png', 'suratkemenag/kabko_disposisi/proseseselon4/add');
 		$output = $crud->render();
 
 		$data['main_page'] = 'suratkemenag/admin/admin';
