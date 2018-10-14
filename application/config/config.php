@@ -9,7 +9,7 @@ $config['base_url'] 		= 'http://localhost/pkl';
 $config['nama'] 			= 'Aplikasi Surat';
 $config['kd_kwl']			= 'Kab. Jember';
 $config['kanwil']			= 'Kanwil Kementerian Agama Jatim';
-$config['kode_kabko']		= '1317';
+$config['kode_kabko']		= '1320';
 
 $config['ip_server']		= 'localhost';
 $config['tahun']			= '2018';

@@ -47,7 +47,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-rounded btn-default" data-dismiss="modal">Close</button>
-					<button onclick="location.href='<?php echo base_url(); ?>pengumuman';"  type="button" class="btn btn-rounded btn-primary">Lihat Pengumuman Lengkap</button>
+					<button onclick="location.href='<?php echo base_url(); ?>suratkemenag/pengumuman';"  type="button" class="btn btn-rounded btn-primary">Lihat Pengumuman Lengkap</button>
 				</div>
 			</div>
 		</div>
