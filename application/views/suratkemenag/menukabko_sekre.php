@@ -26,7 +26,12 @@
         <li <?php if($uri12=='suratkemenag/kabko_disposisidaftarsekre') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_disposisi/daftarsekre"><span class="lbl">Daftar</span></a></li>
     </ul>
 </li>
-
+<li class="magenta ?>">
+    <span>
+        <i class="font-icon glyphicon glyphicon-transfer"></i>
+        <span class="lbl">Surat Perjalanan Dinas</span>
+    </span>
+</li>
 <li class="green with-sub <?php if($uri1=='suratkemenag/kabko_suratkeluar') { echo 'opened'; } ?>">
     <span>
         <i class="font-icon glyphicon glyphicon-send"></i>
