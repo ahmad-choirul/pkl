@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2018 at 04:25 PM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: Nov 07, 2018 at 03:41 AM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -1423,6 +1421,40 @@ INSERT INTO `t_disposisi` (`id`, `id_suratmasuk`, `id_pemberi`, `id_penerima`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `t_suratdinas`
+--
+
+CREATE TABLE `t_suratdinas` (
+  `id` int(11) NOT NULL,
+  `dasar` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `nip` varchar(50) DEFAULT NULL,
+  `pangkatgol` varchar(255) NOT NULL,
+  `jabatan` varchar(255) NOT NULL,
+  `tingkat_biaya` varchar(50) NOT NULL,
+  `maksud` varchar(255) NOT NULL,
+  `tempat` varchar(255) NOT NULL,
+  `alat_angkut` varchar(50) NOT NULL,
+  `tempat_berangkat` varchar(100) NOT NULL,
+  `tempat_tujuan` varchar(100) NOT NULL,
+  `tanggal_awal` date NOT NULL,
+  `tanggal_akhir` date NOT NULL,
+  `kepada` varchar(255) NOT NULL,
+  `tanggal pembuatan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_suratdinas`
+--
+
+INSERT INTO `t_suratdinas` (`id`, `dasar`, `nama`, `nip`, `pangkatgol`, `jabatan`, `tingkat_biaya`, `maksud`, `tempat`, `alat_angkut`, `tempat_berangkat`, `tempat_tujuan`, `tanggal_awal`, `tanggal_akhir`, `kepada`, `tanggal pembuatan`) VALUES
+(1, 'Brosur Workshop ITS Surabaya', 'Muhammad Fauzi, S.Kom', '19770602 201101 1 005', 'Penata Muda Tk I (III/b)', 'Pranata Komputer Ahli Pertama pada Seksi Penyelenggaraan Haji dan Umrah Kantor Kementerian Agama Kabupaten Jember Provinsi Jawa Timur', 'Tingkat C', 'Manghadiri Sebagai Peserta Kegiatan Workshop Business Intellegence and Data Crawling', 'Ruang AJ201, Gedung Teknik Elektro, Kampus ITS Surabaya. Jl. Raya ITS Surabaya', 'Kendaraan Umum', 'Jember', 'Sidoarjo', '2018-11-06', '2018-11-06', 'Kepada', '2018-11-06 06:36:59'),
+(2, 'aa', 'a', '1', 'a', 'a', '', 'a', 'aa', '', '', '', '2018-11-01', '2018-11-02', 'aa', '2018-11-06 06:49:22'),
+(3, 'jalan-jalan', 'siapa', '-', 'ndak tau', 'belum dapat', 'murah', 'bermain', 'jalan buntu', 'sepeda', 'jember', 'surabaya', '2018-11-07', '2018-11-08', 'siapa', '2018-11-07 01:40:57');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `t_suratkeluar`
 --
 
@@ -1532,10 +1564,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `id_rules`, `name`, `username`, `password`, `id_bidang`, `id_seksi`, `id_jabatan`, `status`, `ket`, `foto`) VALUES
-(1001, 1001, 'Adminnya KabKo', 'adminkabko', 'adminkabko', 1000, 0, 0, 1, NULL, 'f2cfd-demo.png'),
-(1002, 1002, 'sekrekabko', 'sekrekabko', 'sekrekabko', 1000, 1001, 1003, 1, 'sekre', 'ecaad-demo.png'),
-(1003, 1004, 'penggunakabko', 'penggunakabko', 'penggunakabko', 1000, 1003, 1003, 1, NULL, '4df2d-demo.png'),
-(1004, 1003, 'kasikabko', 'kasikabko', 'kasikabko', 1000, 1003, 1002, 1, NULL, '139e2-demo.png'),
+(1001, 1001, 'admin', 'admin', 'admin', 1000, 0, 0, 1, NULL, 'f2cfd-demo.png'),
+(1002, 1002, 'sekretaris', 'sekretaris', 'sekretaris', 1000, 1001, 1003, 1, 'sekre', '92b13-578ce64bdd725-sunder-the-handsome.png'),
+(1003, 1004, 'pengguna', 'pengguna', 'pengguna', 1000, 1003, 1003, 1, NULL, '4df2d-demo.png'),
+(1004, 1003, 'kasi', 'kasi', 'kasi', 1000, 1003, 1002, 1, NULL, '139e2-demo.png'),
 (1005, 1002, 'Kepala Kantor', 'kepala', 'kepala', 1000, NULL, 1001, 1, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -1572,7 +1604,6 @@ INSERT INTO `users_rules` (`id`, `rules`, `keterangan`) VALUES
 
 --
 -- Stand-in structure for view `v_disposisi`
--- (See below for the actual view)
 --
 CREATE TABLE `v_disposisi` (
 `id` int(11)
@@ -1607,7 +1638,6 @@ CREATE TABLE `v_disposisi` (
 
 --
 -- Stand-in structure for view `v_disposisi_id_last`
--- (See below for the actual view)
 --
 CREATE TABLE `v_disposisi_id_last` (
 `id_suratmasuk` int(11)
@@ -1618,7 +1648,6 @@ CREATE TABLE `v_disposisi_id_last` (
 
 --
 -- Stand-in structure for view `v_disposisi_last`
--- (See below for the actual view)
 --
 CREATE TABLE `v_disposisi_last` (
 `id` int(11)
@@ -1653,7 +1682,6 @@ CREATE TABLE `v_disposisi_last` (
 
 --
 -- Stand-in structure for view `v_suratkeluar`
--- (See below for the actual view)
 --
 CREATE TABLE `v_suratkeluar` (
 `id` int(11)
@@ -1682,7 +1710,6 @@ CREATE TABLE `v_suratkeluar` (
 
 --
 -- Stand-in structure for view `v_suratmasuk_posisi`
--- (See below for the actual view)
 --
 CREATE TABLE `v_suratmasuk_posisi` (
 `kode_kabko` varchar(5)
@@ -1709,7 +1736,6 @@ CREATE TABLE `v_suratmasuk_posisi` (
 
 --
 -- Stand-in structure for view `v_users`
--- (See below for the actual view)
 --
 CREATE TABLE `v_users` (
 `id` int(11)
@@ -1876,6 +1902,12 @@ ALTER TABLE `t_disposisi`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `t_suratdinas`
+--
+ALTER TABLE `t_suratdinas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `t_suratkeluar`
 --
 ALTER TABLE `t_suratkeluar`
@@ -1915,122 +1947,106 @@ ALTER TABLE `users_rules`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=672;
-
 --
 -- AUTO_INCREMENT for table `m_kabko`
 --
 ALTER TABLE `m_kabko`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
-
 --
 -- AUTO_INCREMENT for table `m_kodeklasifikasi`
 --
 ALTER TABLE `m_kodeklasifikasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1002;
-
 --
 -- AUTO_INCREMENT for table `m_man`
 --
 ALTER TABLE `m_man`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
-
 --
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `ref_asalsurat`
 --
 ALTER TABLE `ref_asalsurat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `ref_bidang`
 --
 ALTER TABLE `ref_bidang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1339;
-
 --
 -- AUTO_INCREMENT for table `ref_jabatan`
 --
 ALTER TABLE `ref_jabatan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1004;
-
 --
 -- AUTO_INCREMENT for table `ref_jenissurat`
 --
 ALTER TABLE `ref_jenissurat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1009;
-
 --
 -- AUTO_INCREMENT for table `ref_seksi`
 --
 ALTER TABLE `ref_seksi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1009;
-
 --
 -- AUTO_INCREMENT for table `ref_sifat`
 --
 ALTER TABLE `ref_sifat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `t_chatpersonal`
 --
 ALTER TABLE `t_chatpersonal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `t_chatroom`
 --
 ALTER TABLE `t_chatroom`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `t_disposisi`
 --
 ALTER TABLE `t_disposisi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+--
+-- AUTO_INCREMENT for table `t_suratdinas`
+--
+ALTER TABLE `t_suratdinas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `t_suratkeluar`
 --
 ALTER TABLE `t_suratkeluar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `t_suratmasuk`
 --
 ALTER TABLE `t_suratmasuk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `u_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1006;
-
 --
 -- AUTO_INCREMENT for table `users_rules`
 --
 ALTER TABLE `users_rules`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
