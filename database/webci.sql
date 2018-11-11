@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2018 at 03:41 AM
+-- Generation Time: Nov 11, 2018 at 03:02 AM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -1429,6 +1429,7 @@ CREATE TABLE `t_suratdinas` (
   `dasar` varchar(255) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `nip` varchar(50) DEFAULT NULL,
+  `kode_devisi` int(11) NOT NULL,
   `pangkatgol` varchar(255) NOT NULL,
   `jabatan` varchar(255) NOT NULL,
   `tingkat_biaya` varchar(50) NOT NULL,
@@ -1439,18 +1440,18 @@ CREATE TABLE `t_suratdinas` (
   `tempat_tujuan` varchar(100) NOT NULL,
   `tanggal_awal` date NOT NULL,
   `tanggal_akhir` date NOT NULL,
-  `kepada` varchar(255) NOT NULL,
-  `tanggal pembuatan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `atas_nama` varchar(255) NOT NULL,
+  `tanggal_pembuatan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `t_suratdinas`
 --
 
-INSERT INTO `t_suratdinas` (`id`, `dasar`, `nama`, `nip`, `pangkatgol`, `jabatan`, `tingkat_biaya`, `maksud`, `tempat`, `alat_angkut`, `tempat_berangkat`, `tempat_tujuan`, `tanggal_awal`, `tanggal_akhir`, `kepada`, `tanggal pembuatan`) VALUES
-(1, 'Brosur Workshop ITS Surabaya', 'Muhammad Fauzi, S.Kom', '19770602 201101 1 005', 'Penata Muda Tk I (III/b)', 'Pranata Komputer Ahli Pertama pada Seksi Penyelenggaraan Haji dan Umrah Kantor Kementerian Agama Kabupaten Jember Provinsi Jawa Timur', 'Tingkat C', 'Manghadiri Sebagai Peserta Kegiatan Workshop Business Intellegence and Data Crawling', 'Ruang AJ201, Gedung Teknik Elektro, Kampus ITS Surabaya. Jl. Raya ITS Surabaya', 'Kendaraan Umum', 'Jember', 'Sidoarjo', '2018-11-06', '2018-11-06', 'Kepada', '2018-11-06 06:36:59'),
-(2, 'aa', 'a', '1', 'a', 'a', '', 'a', 'aa', '', '', '', '2018-11-01', '2018-11-02', 'aa', '2018-11-06 06:49:22'),
-(3, 'jalan-jalan', 'siapa', '-', 'ndak tau', 'belum dapat', 'murah', 'bermain', 'jalan buntu', 'sepeda', 'jember', 'surabaya', '2018-11-07', '2018-11-08', 'siapa', '2018-11-07 01:40:57');
+INSERT INTO `t_suratdinas` (`id`, `dasar`, `nama`, `nip`, `kode_devisi`, `pangkatgol`, `jabatan`, `tingkat_biaya`, `maksud`, `tempat`, `alat_angkut`, `tempat_berangkat`, `tempat_tujuan`, `tanggal_awal`, `tanggal_akhir`, `atas_nama`, `tanggal_pembuatan`) VALUES
+(1, 'Brosur Workshop ITS Surabaya', 'Muhammad Fauzi, S.Kom', '19770602 201101 1 005', 0, 'Penata Muda Tk I (III/b)', 'Pranata Komputer Ahli Pertama pada Seksi Penyelenggaraan Haji dan Umrah Kantor Kementerian Agama Kabupaten Jember Provinsi Jawa Timur', 'Tingkat C', 'Manghadiri Sebagai Peserta Kegiatan Workshop Business Intellegence and Data Crawling', 'Ruang AJ201, Gedung Teknik Elektro, Kampus ITS Surabaya. Jl. Raya ITS Surabaya', 'Kendaraan Umum', 'Jember', 'Sidoarjo', '2018-11-06', '2018-11-06', 'Kepala kemenag', '2018-11-06 06:36:59'),
+(2, 'aa', 'a', '1', 142, 'a', 'a', 'asd', 'a', 'aa', 'as', 'as', 'as', '2018-11-01', '2018-11-02', 'Kepala kemenag', '2018-11-06 06:49:22'),
+(3, 'jalan-jalan', 'siapa', '-', 0, 'ndak tau', 'belum dapat', 'murah', 'bermain', 'jalan buntu', 'sepeda', 'jember', 'surabaya', '2018-11-07', '2018-11-08', 'Kasubbag', '2018-11-07 01:40:57');
 
 -- --------------------------------------------------------
 
