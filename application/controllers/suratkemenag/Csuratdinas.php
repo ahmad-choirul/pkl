@@ -43,9 +43,9 @@ class Csuratdinas extends CI_Controller {
 		$crud->set_table('t_suratdinas');
 
 		//inputan dan editan
-		$crud->fields('kode_devisi','nama','nip','pangkatgol','jabatan','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','tanggal_pembuatan');
-		$crud->add_fields('kode_devisi','nama','nip','pangkatgol','jabatan','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama');
-		$crud->edit_fields('kode_devisi','nama','nip','pangkatgol','jabatan','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama');
+		$crud->fields('kode_devisi','nama','nip','pangkatgol','jabatan','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','tanggal_pembuatan','id_pkk');
+		$crud->add_fields('kode_devisi','nama','nip','pangkatgol','jabatan','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_pkk');
+		$crud->edit_fields('kode_devisi','nama','nip','pangkatgol','jabatan','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_pkk');
 
 		//ganti nama kolom
 		$crud->display_as('id','ID');
@@ -61,17 +61,21 @@ class Csuratdinas extends CI_Controller {
 		$crud->display_as('tanggalakhir','Tanggal akhir');
 		$crud->display_as('id_user','Perekam');
 		$crud->display_as('file_suratmasuk','File surat masuk');
+		$crud->display_as('nomorsuratundangan','Nomor');
+		$crud->display_as('kode_devisi','Klasifikasi');
+		$crud->display_as('id_pkk','PKK');
 		$crud->field_type('atas_nama','dropdown',
 			array('Kepala kemenag' => 'Kepala kemenag', 'Kasubbag' => 'Kasubbag'));
 		$crud->set_relation('kode_devisi','m_kodeklasifikasi','nama_klasifikasi');
+		$crud->set_relation('id_pkk','m_pkk','nama');
 
 		//kolom yang ditampilkan di table
-		$crud->columns('id','nip','nama','pangkatgol','jabatan','dasar','tanggal_awal','tanggal_akhir','tempat');
+		$crud->columns('id','nip','nama','kode_devisi','tanggal_awal','tanggal_akhir','tempat');
 
 		$crud->order_by('id','desc');
 
 		//inputan dan editan yang wajib diisi
-		$crud->required_fields('nama','pangkatgol','jabatan','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','kepada','atas_nama');
+		$crud->required_fields('nomorsuratundangan','kode_devisi','nama','pangkatgol','jabatan','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','kepada','atas_nama');
 
 		$crud->unset_delete();
 
@@ -105,8 +109,9 @@ class Csuratdinas extends CI_Controller {
 		}
 
 		$docx = new DOCXTemplate('tempat_surat_tugas.docx');
+		$docx->set('nomorsuratundangan',$surat['nomorsuratundangan']);
 		$docx->set('nomor_surat',$surat['id']);
-		$docx->set('kode_divisi','(belum)');
+		$docx->set('kode_divisi',$surat['klasifikasi3']);
 		$docx->set('bulan',$bulan);
 		$docx->set('tahun',$tahun);
 		$docx->set('dasar',$surat['dasar']);
@@ -123,16 +128,18 @@ class Csuratdinas extends CI_Controller {
 				Kepala Sub Bagian Tata Usaha
 
 
-
-				Machfudz
+				Machfudz');
+			$docx->set('tembusan','Tembusan
+				Kepala Kantor Kementerian Agama Kab. Jember
 				');
 		}else if ($surat['atas_nama']=='Kepala kemenag') {
-			$docx->set('atas_nama','Kepala Kementerian agama
+			$docx->set('atas_nama','Kepala
 
 
 
 				Machfudz
 				');
+			$docx->set('tembusan','');
 		}
 		$docx->set('tgl_sekarang',$this->tgl_indo($tanggal));
 
@@ -167,6 +174,8 @@ class Csuratdinas extends CI_Controller {
 		}
 
 		$docx = new DOCXTemplate('spd.docx');
+		$docx->set('tingkat_biaya',$surat['tingkat_biaya']);
+		$docx->set('nama_pkk',$surat['nama_pkk']);
 		$docx->set('nomor_surat',$surat['id']);
 		$docx->set('nama_pembuat','dari session');//
 		$docx->set('bulan',$bulan);//
@@ -175,16 +184,14 @@ class Csuratdinas extends CI_Controller {
 		$docx->set('untuk',$surat['maksud']);//
 		$docx->set('nip',$surat['nip']);//
 		$docx->set('alat_angkut',$surat['alat_angkut']);//
-		$docx->set('total_hari','masih belum');//
+		$docx->set('lama',$surat['lama']);//
 		$docx->set('tempat_berangkat',$surat['tempat_berangkat']);//
 		$docx->set('tempat_tujuan',$surat['tempat_tujuan']);//
 		$docx->set('jabatan',$surat['jabatan']);//
-		$docx->set('tanggal_awal',$surat['tanggal_awal']);//
-		$docx->set('tanggal_akhir',$surat['tanggal_akhir']);//
 		$docx->set('tanggal_awal',$this->rubahtanggal($surat['tanggal_awal']));
 		$docx->set('tanggal_akhir',$this->rubahtanggal($surat['tanggal_akhir']));
-
 		$docx->set('tanggal_pembuatan',$this->tgl_indo($tanggal));
+		$docx->set('kepala_kemenag','Busthami');//
 
 		$docx->downloadAs ('surat2.docx');
 

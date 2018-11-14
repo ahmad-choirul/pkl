@@ -7,9 +7,12 @@ class Msuratdinas extends CI_Model {
     // $query = $this->db->get_where('t_suratdinas', array('id' => $id));
     // $rows = $query->result();
     // return $rows;
-    return $this->db->get_where('t_suratdinas', array('id' => $id))->row_array();
+		$this->db->select('t_suratdinas.*, m_kodeklasifikasi.*, m_pkk.nama as nama_pkk, datediff(tanggal_akhir,tanggal_awal)+1 as lama');
+		$this->db->join('m_kodeklasifikasi', 'm_kodeklasifikasi.id = t_suratdinas.kode_devisi');
+		$this->db->join('m_pkk', 'm_pkk.id = t_suratdinas.id_pkk');
+		return $this->db->get_where('t_suratdinas', array('t_suratdinas.id' => $id))->row_array();
 	}
 }
- 
+
 /* End of file Madd.php */
 /* Location: ./application/models/Madd.php */

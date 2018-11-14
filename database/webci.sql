@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2018 at 03:02 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Nov 14, 2018 at 02:53 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -1100,6 +1102,30 @@ INSERT INTO `m_man` (`id`, `id_kabko`, `nsm`, `nama_man`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `m_pkk`
+--
+
+CREATE TABLE `m_pkk` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `nip` varchar(50) NOT NULL,
+  `wilayah` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `m_pkk`
+--
+
+INSERT INTO `m_pkk` (`id`, `nama`, `nip`, `wilayah`) VALUES
+(1, 'Misbakul Munir', '19860619 201101 1 005', 'Ditjn Bimas Islam Bimas Islam\r\n'),
+(2, 'Ahmad Tholabi', '19610605 198603 1 005', 'Sub Bagian Tata Usaha dan Ditjen PHU\r\n'),
+(3, 'Erwyn Sulthony', '19690306 200003 1 002', 'Ditjen Pendidikan Islam\r\n'),
+(4, 'Tyas Suka Trisuwita', '19700709 200003 1 001', 'Ditjen Kristen\r\n'),
+(5, 'Pitono', '19720705 200501 1 004', 'PPK Pengadaan');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pengumuman`
 --
 
@@ -1427,6 +1453,7 @@ INSERT INTO `t_disposisi` (`id`, `id_suratmasuk`, `id_pemberi`, `id_penerima`, `
 CREATE TABLE `t_suratdinas` (
   `id` int(11) NOT NULL,
   `dasar` varchar(255) NOT NULL,
+  `nomorsuratundangan` varchar(100) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `nip` varchar(50) DEFAULT NULL,
   `kode_devisi` int(11) NOT NULL,
@@ -1441,6 +1468,7 @@ CREATE TABLE `t_suratdinas` (
   `tanggal_awal` date NOT NULL,
   `tanggal_akhir` date NOT NULL,
   `atas_nama` varchar(255) NOT NULL,
+  `id_pkk` int(11) NOT NULL,
   `tanggal_pembuatan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1448,10 +1476,11 @@ CREATE TABLE `t_suratdinas` (
 -- Dumping data for table `t_suratdinas`
 --
 
-INSERT INTO `t_suratdinas` (`id`, `dasar`, `nama`, `nip`, `kode_devisi`, `pangkatgol`, `jabatan`, `tingkat_biaya`, `maksud`, `tempat`, `alat_angkut`, `tempat_berangkat`, `tempat_tujuan`, `tanggal_awal`, `tanggal_akhir`, `atas_nama`, `tanggal_pembuatan`) VALUES
-(1, 'Brosur Workshop ITS Surabaya', 'Muhammad Fauzi, S.Kom', '19770602 201101 1 005', 0, 'Penata Muda Tk I (III/b)', 'Pranata Komputer Ahli Pertama pada Seksi Penyelenggaraan Haji dan Umrah Kantor Kementerian Agama Kabupaten Jember Provinsi Jawa Timur', 'Tingkat C', 'Manghadiri Sebagai Peserta Kegiatan Workshop Business Intellegence and Data Crawling', 'Ruang AJ201, Gedung Teknik Elektro, Kampus ITS Surabaya. Jl. Raya ITS Surabaya', 'Kendaraan Umum', 'Jember', 'Sidoarjo', '2018-11-06', '2018-11-06', 'Kepala kemenag', '2018-11-06 06:36:59'),
-(2, 'aa', 'a', '1', 142, 'a', 'a', 'asd', 'a', 'aa', 'as', 'as', 'as', '2018-11-01', '2018-11-02', 'Kepala kemenag', '2018-11-06 06:49:22'),
-(3, 'jalan-jalan', 'siapa', '-', 0, 'ndak tau', 'belum dapat', 'murah', 'bermain', 'jalan buntu', 'sepeda', 'jember', 'surabaya', '2018-11-07', '2018-11-08', 'Kasubbag', '2018-11-07 01:40:57');
+INSERT INTO `t_suratdinas` (`id`, `dasar`, `nomorsuratundangan`, `nama`, `nip`, `kode_devisi`, `pangkatgol`, `jabatan`, `tingkat_biaya`, `maksud`, `tempat`, `alat_angkut`, `tempat_berangkat`, `tempat_tujuan`, `tanggal_awal`, `tanggal_akhir`, `atas_nama`, `id_pkk`, `tanggal_pembuatan`) VALUES
+(1, 'Brosur Workshop ITS Surabaya', '45', 'Muhammad Fauzi, S.Kom', '19770602 201101 1 005', 82, 'Penata Muda Tk I (III/b)', 'Pranata Komputer Ahli Pertama pada Seksi Penyelenggaraan Haji dan Umrah Kantor Kementerian Agama Kabupaten Jember Provinsi Jawa Timur', 'C', 'Manghadiri Sebagai Peserta Kegiatan Workshop Business Intellegence and Data Crawling', 'Ruang AJ201, Gedung Teknik Elektro, Kampus ITS Surabaya. Jl. Raya ITS Surabaya', 'Kendaraan Umum', 'Jember', 'Sidoarjo', '2018-11-06', '2018-11-06', 'Kasubbag', 1, '2018-11-06 06:36:59'),
+(2, 'aa', '', 'a', '1', 142, 'a', 'a', 'asd', 'a', 'aa', 'as', 'as', 'as', '2018-11-01', '2018-11-02', 'Kepala kemenag', 2, '2018-11-06 06:49:22'),
+(3, 'jalan-jalan', '', 'siapa', '-', 0, 'ndak tau', 'belum dapat', 'murah', 'bermain', 'jalan buntu', 'sepeda', 'jember', 'surabaya', '2018-11-07', '2018-11-08', 'Kasubbag', 3, '2018-11-07 01:40:57'),
+(4, 'a', '', 'Rio', '152410101152', 4, 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '2018-11-14', '2018-11-14', 'Kepala kemenag', 4, '2018-11-14 04:32:32');
 
 -- --------------------------------------------------------
 
@@ -1605,6 +1634,7 @@ INSERT INTO `users_rules` (`id`, `rules`, `keterangan`) VALUES
 
 --
 -- Stand-in structure for view `v_disposisi`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_disposisi` (
 `id` int(11)
@@ -1639,6 +1669,7 @@ CREATE TABLE `v_disposisi` (
 
 --
 -- Stand-in structure for view `v_disposisi_id_last`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_disposisi_id_last` (
 `id_suratmasuk` int(11)
@@ -1649,6 +1680,7 @@ CREATE TABLE `v_disposisi_id_last` (
 
 --
 -- Stand-in structure for view `v_disposisi_last`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_disposisi_last` (
 `id` int(11)
@@ -1683,6 +1715,7 @@ CREATE TABLE `v_disposisi_last` (
 
 --
 -- Stand-in structure for view `v_suratkeluar`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_suratkeluar` (
 `id` int(11)
@@ -1711,6 +1744,7 @@ CREATE TABLE `v_suratkeluar` (
 
 --
 -- Stand-in structure for view `v_suratmasuk_posisi`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_suratmasuk_posisi` (
 `kode_kabko` varchar(5)
@@ -1737,6 +1771,7 @@ CREATE TABLE `v_suratmasuk_posisi` (
 
 --
 -- Stand-in structure for view `v_users`
+-- (See below for the actual view)
 --
 CREATE TABLE `v_users` (
 `id` int(11)
@@ -1840,6 +1875,12 @@ ALTER TABLE `m_kodeklasifikasi`
 -- Indexes for table `m_man`
 --
 ALTER TABLE `m_man`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `m_pkk`
+--
+ALTER TABLE `m_pkk`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1948,106 +1989,128 @@ ALTER TABLE `users_rules`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `data`
 --
 ALTER TABLE `data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=672;
+
 --
 -- AUTO_INCREMENT for table `m_kabko`
 --
 ALTER TABLE `m_kabko`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
 --
 -- AUTO_INCREMENT for table `m_kodeklasifikasi`
 --
 ALTER TABLE `m_kodeklasifikasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1002;
+
 --
 -- AUTO_INCREMENT for table `m_man`
 --
 ALTER TABLE `m_man`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+
 --
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `ref_asalsurat`
 --
 ALTER TABLE `ref_asalsurat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `ref_bidang`
 --
 ALTER TABLE `ref_bidang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1339;
+
 --
 -- AUTO_INCREMENT for table `ref_jabatan`
 --
 ALTER TABLE `ref_jabatan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1004;
+
 --
 -- AUTO_INCREMENT for table `ref_jenissurat`
 --
 ALTER TABLE `ref_jenissurat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1009;
+
 --
 -- AUTO_INCREMENT for table `ref_seksi`
 --
 ALTER TABLE `ref_seksi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1009;
+
 --
 -- AUTO_INCREMENT for table `ref_sifat`
 --
 ALTER TABLE `ref_sifat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `t_chatpersonal`
 --
 ALTER TABLE `t_chatpersonal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `t_chatroom`
 --
 ALTER TABLE `t_chatroom`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `t_disposisi`
 --
 ALTER TABLE `t_disposisi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `t_suratdinas`
 --
 ALTER TABLE `t_suratdinas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `t_suratkeluar`
 --
 ALTER TABLE `t_suratkeluar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `t_suratmasuk`
 --
 ALTER TABLE `t_suratmasuk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `u_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1006;
+
 --
 -- AUTO_INCREMENT for table `users_rules`
 --
 ALTER TABLE `users_rules`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1005;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
