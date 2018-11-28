@@ -2,8 +2,8 @@
 
 class Kabko_admin extends CI_Controller {
 	function __construct() 
-    {
-        parent::__construct();
+	{
+		parent::__construct();
 
 		// benchmark aja...
 		if (1==2) 
@@ -18,15 +18,15 @@ class Kabko_admin extends CI_Controller {
 		}
 
 		$this->data = null;
-	    $logged_in = $this->session->userdata('logged_in');
-	    if(!isset($logged_in['id_rules']))
-	    {
-	    	redirect('/suratkemenag/auth/logout/');
-	    }
-	    elseif($logged_in['id_rules']!=1001)
-	    {
-	    	redirect('/suratkemenag/dashboard');
-	    }
+		$logged_in = $this->session->userdata('logged_in');
+		if(!isset($logged_in['id_rules']))
+		{
+			redirect('/suratkemenag/auth/logout/');
+		}
+		elseif($logged_in['id_rules']!=1001)
+		{
+			redirect('/suratkemenag/dashboard');
+		}
 		$this->login = $this->session->userdata('logged_in');
 
 	}
@@ -83,7 +83,7 @@ class Kabko_admin extends CI_Controller {
 		$crud->set_relation('id_seksi','ref_seksi','nama_seksi','id > 1000');
 		$crud->set_relation('id_jabatan','ref_jabatan','jabatan','id > 1000');
 		$crud->field_type('status','dropdown',
-		array('1' => 'aktif', '2' => 'non aktif'));
+			array('1' => 'aktif', '2' => 'non aktif'));
 		$crud->set_field_upload('foto','file_foto');
 
 		$crud->unset_delete();
@@ -188,6 +188,28 @@ class Kabko_admin extends CI_Controller {
 		$this->load->view('suratkemenag/default',$output);
 	}
 
+	function ppk()
+	{
+		$this->load->library('grocery_CRUD');  
+		
+		$crud = new grocery_CRUD();
+		//$crud->set_theme('datatables');
+		$crud->set_table('m_ppk');
+		$crud->columns('id','nama','nip','wilayah');
+		$crud->required_fields('nama','nip','wilayah');
+		$crud->add_fields('nama','nip','wilayah');
+		$crud->edit_fields('id','nama','nip','wilayah');
+		$crud->field_type('id', 'readonly');
+
+		$output = $crud->render();
+
+		$data['main_page'] = 'suratkemenag/admin/admin';
+		$data['state'] = $crud->getState();
+		$data['table'] = true;
+		$output->data=$data;
+		$this->load->view('suratkemenag/default',$output);
+	}
+
 	function jabatan()
 	{
 		$this->load->library('grocery_CRUD');  
@@ -217,7 +239,7 @@ class Kabko_admin extends CI_Controller {
 		$crud = new grocery_CRUD();
 		$crud->set_table('pengumuman');
 
-	    $logged_in = $this->session->userdata('logged_in');
+		$logged_in = $this->session->userdata('logged_in');
 
 
 		$crud->callback_add_field('username',function(){

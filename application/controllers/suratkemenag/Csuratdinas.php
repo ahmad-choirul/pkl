@@ -67,7 +67,7 @@ class Csuratdinas extends CI_Controller {
 		$crud->field_type('atas_nama','dropdown',
 			array('Kepala kemenag' => 'Kepala kemenag', 'Kasubbag' => 'Kasubbag'));
 		$crud->set_relation('kode_devisi','m_kodeklasifikasi','nama_klasifikasi');
-		$crud->set_relation('id_pkk','m_pkk','nama');
+		$crud->set_relation('id_pkk','m_ppk','nama');
 
 		//kolom yang ditampilkan di table
 		$crud->columns('id','nip','nama','kode_devisi','tanggal_awal','tanggal_akhir','tempat');

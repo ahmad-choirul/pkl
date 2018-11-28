@@ -16,6 +16,7 @@
         <li <?php if($uri12=='suratkemenag/kabko_adminsifat') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/sifat"><span class="lbl">Referensi Sifat</span></a></li>
         <li <?php if($uri12=='suratkemenag/kabko_adminseksi') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/seksi"><span class="lbl">Referensi Seksi</span></a></li>
         <li <?php if($uri12=='suratkemenag/kabko_adminjabatan') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/jabatan"><span class="lbl">Referensi Jabatan</span></a></li>
+        <li <?php if($uri12=='suratkemenag/kabko_adminjabatan') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/ppk"><span class="lbl">Referensi PPK</span></a></li>
         <li <?php if($uri12=='suratkemenag/kabko_adminpengumuman') { echo 'class="menuaktif"'; } ?>><a href="<?php echo base_url(); ?>suratkemenag/kabko_admin/pengumuman"><span class="lbl">Pengumuman</span></a></li>
     </ul>
 </li>
