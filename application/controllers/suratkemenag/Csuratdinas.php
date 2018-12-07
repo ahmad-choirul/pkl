@@ -43,7 +43,7 @@ class Csuratdinas extends CI_Controller {
 		$crud->set_table('t_suratdinas');
 
 		//inputan dan editan
-		$crud->fields('kode_devisi','id_pegawai','pangkat','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','tanggal_pembuatan','id_ppk');
+		$crud->fields('kode_devisi','id_pegawai','pangkat','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','tanggal_pembuatan','atas_nama','id_ppk');
 		$crud->add_fields('kode_devisi','id_pegawai','pangkat','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_ppk');
 		$crud->edit_fields('kode_devisi','id_pegawai','pangkat','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_ppk');
 
@@ -67,9 +67,11 @@ class Csuratdinas extends CI_Controller {
 		$crud->display_as('file_suratmasuk','File surat masuk');
 		$crud->display_as('nomorsuratundangan','Nomor');
 		$crud->display_as('kode_devisi','Klasifikasi');
-		$crud->display_as('id_pkk','PKK');
-		$crud->field_type('atas_nama','dropdown',
-			array('Kepala kemenag' => 'Kepala kemenag', 'Kasubbag' => 'Kasubbag'));
+		$crud->display_as('id_ppk','PPK');
+		$crud->field_type('atas_nama','dropdown', array(
+			'Kepala kemenag' 	=> 'Kepala kemenag',
+			'Kasubbag' 			=> 'Kasubbag'
+		));
 		$crud->set_relation('kode_devisi','m_kodeklasifikasi','nama_klasifikasi');
 		$crud->set_relation('id_ppk','m_ppk','nama');
 
@@ -79,7 +81,7 @@ class Csuratdinas extends CI_Controller {
 		$crud->order_by('id','desc');
 
 		//inputan dan editan yang wajib diisi
-		$crud->required_fields('nomorsuratundangan','id_pegawai','gol','kode_devisi','pangkat','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','kepada','atas_nama');
+		$crud->required_fields('nomorsuratundangan','id_pegawai','gol','kode_devisi','pangkat','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','kepada','atas_nama','id_ppk');
 
 		$crud->unset_delete();
 
