@@ -156,6 +156,25 @@ class Kabko_admin extends CI_Controller {
 		$this->load->view('suratkemenag/default',$output);
 	}
 
+	function pegawai()
+	{
+		$this->load->library('grocery_CRUD');  
+		
+		$crud = new grocery_CRUD();
+		//$crud->set_theme('datatables');
+		$crud->set_table('data_pegawai');
+
+		$crud->display_as('nip','NIP');
+
+		$output = $crud->render();
+
+		$data['main_page'] = 'suratkemenag/admin/admin';
+		$data['state'] = $crud->getState();
+		$data['table'] = true;
+		$output->data=$data;
+		$this->load->view('suratkemenag/default',$output);
+	}
+
 	function seksi()
 	{
 		$this->load->library('grocery_CRUD');  
