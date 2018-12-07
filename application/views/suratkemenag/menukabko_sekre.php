@@ -28,7 +28,7 @@ $uri12=$uri1.$uri2;
     </li>
     <li class="magenta ?>">
         <a href="<?php echo base_url(); ?>suratkemenag/Csuratdinas">
-            <i class="font-icon glyphicon glyphicon-transfer"></i>
+            <i class="font-icon glyphicon glyphicon-road"></i>
             <span class="lbl">Surat Perjalanan Dinas</span>
         </a>
     </li>

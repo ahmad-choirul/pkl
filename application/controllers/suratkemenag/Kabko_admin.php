@@ -165,7 +165,7 @@ class Kabko_admin extends CI_Controller {
 		$crud->set_table('data_pegawai');
 
 		$crud->display_as('nip','NIP');
-
+		$crud->unset_delete();
 		$output = $crud->render();
 
 		$data['main_page'] = 'suratkemenag/admin/admin';

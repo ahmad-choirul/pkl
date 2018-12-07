@@ -43,15 +43,19 @@ class Csuratdinas extends CI_Controller {
 		$crud->set_table('t_suratdinas');
 
 		//inputan dan editan
-		$crud->fields('kode_devisi','nama','nip','pangkatgol','jabatan','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','tanggal_pembuatan','id_pkk');
-		$crud->add_fields('kode_devisi','nama','nip','pangkatgol','jabatan','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_pkk');
-		$crud->edit_fields('kode_devisi','nama','nip','pangkatgol','jabatan','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_pkk');
+		$crud->fields('kode_devisi','id_pegawai','pangkat','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','tanggal_pembuatan','id_ppk');
+		$crud->add_fields('kode_devisi','id_pegawai','pangkat','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_ppk');
+		$crud->edit_fields('kode_devisi','id_pegawai','pangkat','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_ppk');
 
 		//ganti nama kolom
 		$crud->display_as('id','ID');
-		$crud->display_as('nip','NIP');
+		$crud->set_relation('id_pegawai','data_pegawai','{nama} - {nip} - {gol}');
+		// $crud->set_relation('id_pegawai','data_pegawai','nip');
+		// $crud->set_relation('id_pegawai','data_pegawai','gol');
+		$crud->display_as('pangkat','Pangkat');
+		// $crud->set_relation('id_pegawai','data_pegawai','jabatan');
+		$crud->display_as('id_pegawai','Pegawai');
 		$crud->display_as('tingkat_biaya','Tingkat biaya');
-		$crud->display_as('pangkatgol','Pangkat/Gol');
 		$crud->display_as('maksud','Maksud');
 		$crud->display_as('tempat','Detail Tempat');
 		$crud->display_as('alat_angkut','Alat Angkut');
@@ -67,15 +71,15 @@ class Csuratdinas extends CI_Controller {
 		$crud->field_type('atas_nama','dropdown',
 			array('Kepala kemenag' => 'Kepala kemenag', 'Kasubbag' => 'Kasubbag'));
 		$crud->set_relation('kode_devisi','m_kodeklasifikasi','nama_klasifikasi');
-		$crud->set_relation('id_pkk','m_ppk','nama');
+		$crud->set_relation('id_ppk','m_ppk','nama');
 
 		//kolom yang ditampilkan di table
-		$crud->columns('id','nip','nama','kode_devisi','tanggal_awal','tanggal_akhir','tempat');
+		$crud->columns('id','id_pegawai','kode_devisi','tanggal_awal','tanggal_akhir','tempat');
 
 		$crud->order_by('id','desc');
 
 		//inputan dan editan yang wajib diisi
-		$crud->required_fields('nomorsuratundangan','kode_devisi','nama','pangkatgol','jabatan','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','kepada','atas_nama');
+		$crud->required_fields('nomorsuratundangan','id_pegawai','gol','kode_devisi','pangkat','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','kepada','atas_nama');
 
 		$crud->unset_delete();
 
@@ -107,7 +111,6 @@ class Csuratdinas extends CI_Controller {
 			$tahun = date("Y", $timestamp);  
 			$tanggal = date('Y-m-d', $timestamp);  
 		}
-
 		$docx = new DOCXTemplate('tempat_surat_tugas.docx');
 		$docx->set('nomorsuratundangan',$surat['nomorsuratundangan']);
 		$docx->set('nomor_surat',$surat['id']);
@@ -117,7 +120,8 @@ class Csuratdinas extends CI_Controller {
 		$docx->set('dasar',$surat['dasar']);
 		$docx->set('nama',$surat['nama']);
 		$docx->set('nip',$surat['nip']);
-		$docx->set('pangkat_gol',$surat['pangkatgol']);
+		$docx->set('pangkat',$surat['pangkat']);
+		$docx->set('gol',$surat['gol']);
 		$docx->set('jabatan',$surat['jabatan']);
 		$docx->set('tempat',$surat['tempat']);
 		$docx->set('untuk',$surat['maksud']);
