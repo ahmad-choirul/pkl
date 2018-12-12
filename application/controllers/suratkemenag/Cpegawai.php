@@ -1,23 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Csuratdinas extends CI_Controller {
+class Cpegawai extends CI_Controller {
 	function __construct() 
 	{
 		parent::__construct();
-
-		// benchmark aja...
-		// if (1==2) 
-		// {
-		// 	$sections = array(
-		// 		'benchmarks' => TRUE, 'memory_usage' => TRUE, 
-		// 		'config' => FALSE, 'controller_info' => FALSE, 'get' => FALSE, 'post' => FALSE, 'queries' => FALSE, 
-		// 		'uri_string' => FALSE, 'http_headers' => FALSE, 'session_data' => FALSE
-		// 	); 
-		// 	$this->output->set_profiler_sections($sections);
-		// 	$this->output->enable_profiler(TRUE);
-		// }
-
 		$this->data = null;
 		$logged_in = $this->session->userdata('logged_in');
 		if(!isset($logged_in['id_rules']))
@@ -30,7 +17,7 @@ class Csuratdinas extends CI_Controller {
 	//sekre
 	function index()
 	{
-		if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
+		// if($this->login['id_rules']==1001) { redirect('/suratkemenag/errorpage/deny'); } //admin ga boleh
 		//if($this->login['id_rules']==1002) { redirect('/suratkemenag/errorpage/deny'); } //sekre ga boleh
 		if($this->login['id_rules']==1003) { redirect('/suratkemenag/errorpage/deny'); } //es4 ga boleh
 		if($this->login['id_rules']==1004) { redirect('/suratkemenag/errorpage/deny'); } //pengguna ga boleh
@@ -40,57 +27,36 @@ class Csuratdinas extends CI_Controller {
 		$crud = new grocery_CRUD();
 
 		//tabel
-		$crud->set_table('t_suratdinas');
+		$crud->set_table('data_pegawai');
 
 		//inputan dan editan
-		$crud->fields('kode_devisi','id_pegawai','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','tanggal_pembuatan','atas_nama','id_ppk');
-		$crud->add_fields('kode_devisi','id_pegawai','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_ppk');
-		$crud->edit_fields('kode_devisi','id_pegawai','tingkat_biaya','dasar','nomorsuratundangan','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','atas_nama','id_ppk');
+		$crud->fields('id_pegawai','nama','nip','gol','pangkat','jabatan');
+		$crud->add_fields('nama','nip','gol','pangkat','jabatan');
+		$crud->edit_fields('nama','nip','gol','pangkat','jabatan');
 
 		//ganti nama kolom
-		$crud->display_as('id','ID');
-		$crud->set_relation('id_pegawai','data_pegawai','{nama} - {nip} - {gol} - {pangkat}');
+		// $crud->display_as('id','ID');
+		// $crud->set_relation('id_pegawai','data_pegawai','{nama} - {nip} - {gol}');
 		// $crud->set_relation('id_pegawai','data_pegawai','nip');
 		// $crud->set_relation('id_pegawai','data_pegawai','gol');
-		// $crud->display_as('pangkat','Pangkat');
+		$crud->display_as('nama','Nama');
 		// $crud->set_relation('id_pegawai','data_pegawai','jabatan');
-		$crud->display_as('id_pegawai','Pegawai');
+		$crud->display_as('nip','NIP');
 		$crud->display_as('tingkat_biaya','Tingkat biaya');
-		$crud->display_as('maksud','Maksud');
-		$crud->display_as('tempat','Detail Tempat');
-		$crud->display_as('alat_angkut','Alat Angkut');
-		$crud->display_as('tempat_berangkat','Tempat Berangkat');
-		$crud->display_as('tempat_tujuan','Tempat Tujuan');
-		$crud->display_as('tanggalawal','Tanggal awal');
-		$crud->display_as('tanggalakhir','Tanggal akhir');
-		$crud->display_as('id_user','Perekam');
-		$crud->display_as('file_suratmasuk','File surat masuk');
-		$crud->display_as('nomorsuratundangan','Nomor');
-		$crud->display_as('kode_devisi','Klasifikasi');
-		$crud->display_as('id_ppk','PPK');
-		$crud->field_type('atas_nama','dropdown', array(
-			'Kepala kemenag' 	=> 'Kepala kemenag',
-			'Kasubbag' 			=> 'Kasubbag'
-		));
-		$crud->set_relation('kode_devisi','m_kodeklasifikasi','nama_klasifikasi');
-		$crud->set_relation('id_ppk','m_ppk','nama');
+		$crud->display_as('gol','Golongan');
+		$crud->display_as('pangkat','Pangkat');
+		$crud->display_as('jabatan','Jabatan');
+		$crud->columns('id_pegawai','nama','nip','gol','pangkat','jabatan');
 
-		//kolom yang ditampilkan di table
-		$crud->columns('id','id_pegawai','kode_devisi','tanggal_awal','tanggal_akhir','tempat');
-
-		$crud->order_by('id','desc');
+		$crud->order_by('id_pegawai','asc');
 
 		//inputan dan editan yang wajib diisi
-		$crud->required_fields('nomorsuratundangan','id_pegawai','gol','kode_devisi','pangkat','tingkat_biaya','dasar','maksud','alat_angkut','tempat_berangkat','tempat_tujuan','tanggal_awal','tanggal_akhir','tempat','kepada','atas_nama','id_ppk');
-
-		$crud->unset_delete();
-
-		$crud->add_action('Cetak', base_url().'tt.png', 'suratkemenag/Csuratdinas/cetak');
-		$crud->add_action('Cetak2', base_url().'disp.png', 'suratkemenag/Csuratdinas/cetak2');
+		$crud->required_fields('id_pegawai','nama','nip','gol','pangkat','jabatan');
 
 		$output = $crud->render();
 
 		$data['main_page'] = 'suratkemenag/perjalanan_dinas';
+		
 		$data['state'] = $crud->getState();
 		$data['table'] = true;
 		$output->data=$data;

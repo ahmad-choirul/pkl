@@ -32,6 +32,12 @@ $uri12=$uri1.$uri2;
             <span class="lbl">Surat Perjalanan Dinas</span>
         </a>
     </li>
+    <li class="magenta ?>">
+        <a href="<?php echo base_url(); ?>suratkemenag/Cpegawai">
+            <i class="font-icon glyphicon glyphicon-user"></i>
+            <span class="lbl">Pegawai</span>
+        </a>
+    </li>
     <li class="green with-sub <?php if($uri1=='suratkemenag/kabko_suratkeluar') { echo 'opened'; } ?>">
         <span>
             <i class="font-icon glyphicon glyphicon-send"></i>
