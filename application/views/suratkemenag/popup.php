@@ -36,7 +36,7 @@
 		                    echo "<td nowrap>".$data->perihal."</td>";
 		                    echo "<td nowrap>".$data->date."</td>";
 		                    echo '<td nowrap>
-		                      <a href="'.$data->file_pengumuman.'">
+		                      <a href="'.base_url().'file_pengumuman/'.$data->file_pengumuman.'">
 		                        <button type="button" class="btn btn-success btn-xs">download</button>
 		                      </a>';
 		                    echo '</td>';
