@@ -1,6 +1,6 @@
 <?php 
-    $uri1=$this->uri->segment(1);
-    $uri2=$this->uri->segment(2);
+    $uri1=$this->uri->segment(2);
+    $uri2=$this->uri->segment(3);
     $uri12=$uri1.$uri2;
 ?>
 <style>

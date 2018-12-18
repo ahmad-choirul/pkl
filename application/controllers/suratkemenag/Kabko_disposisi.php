@@ -101,7 +101,7 @@ class Kabko_disposisi extends CI_Controller {
 		$crud->unset_list();
 
 		$crud->callback_add_field('id_suratmasuk',function(){
-			return '<input id="field-id_suratmasuk" class="form-control" name="id_suratmasuk" type="hidden" value="'.$this->uri->segment(4).'" readonly>locked';
+			return '<input id="field-id_suratmasuk" class="form-control" name="id_suratmasuk" type="hidden" value="'.$this->uri->segment(5).'" readonly>locked';
 		});
 
 		//tanggal rekam
@@ -273,7 +273,7 @@ class Kabko_disposisi extends CI_Controller {
 
 		$crud->display_as('id_suratmasuk','ID');
 		$crud->callback_add_field('id_suratmasuk',function(){
-			return '<input id="field-id_suratmasuk" class="form-control" name="id_suratmasuk" type="hidden" value="'.$this->uri->segment(4).'" readonly>locked';
+			return '<input id="field-id_suratmasuk" class="form-control" name="id_suratmasuk" type="hidden" value="'.$this->uri->segment(5).'" readonly>locked';
 		});
 
 		//tanggal rekam
@@ -454,7 +454,7 @@ class Kabko_disposisi extends CI_Controller {
 
 		$crud->display_as('id_suratmasuk','ID');
 		$crud->callback_add_field('id_suratmasuk',function(){
-			return '<input id="field-id_suratmasuk" class="form-control" name="id_suratmasuk" type="hidden" value="'.$this->uri->segment(4).'" readonly>locked';
+			return '<input id="field-id_suratmasuk" class="form-control" name="id_suratmasuk" type="hidden" value="'.$this->uri->segment(5).'" readonly>locked';
 		});
 		$crud->display_as('id_pemberi','Pemilik Aktifitas');
 		$crud->callback_add_field('id_pemberi',function(){
@@ -570,7 +570,7 @@ class Kabko_disposisi extends CI_Controller {
 		//$crud->set_theme('datatables');
 		$crud->set_table('v_disposisi');
 		$crud->set_primary_key('id','v_disposisi');
-		$crud->where('id_suratmasuk',$this->uri->segment(3));
+		$crud->where('id_suratmasuk',$this->uri->segment(4));
 
 		$crud->set_relation('id_pemberi','users','name');
 		$crud->set_relation('id_penerima','users','name');
@@ -636,7 +636,7 @@ class Kabko_disposisi extends CI_Controller {
 		$crud = new grocery_CRUD();
 		//$crud->set_theme('datatables');
 		$crud->set_table('t_disposisi');
-		$crud->where('id',$this->uri->segment(3));
+		$crud->where('id',$this->uri->segment(4));
 
 		if($this->login['id_rules']==1004) { //pelaksana
 			$crud->edit_fields('id_suratmasuk','tanggal_disposisi','catatan_disposisi','id_userdisposisi','tanggal_rekamdisposisi');

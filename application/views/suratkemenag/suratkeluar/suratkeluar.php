@@ -28,7 +28,7 @@ if($data['state']=='add') { ?>
 		});
 	});
 	
-	var getval="<?php echo $this->uri->segment(4); ?>"
+	var getval="<?php echo $this->uri->segment(5); ?>"
 	//alert(getval);
 	$('#field-id_tujuansurat').val(getval);
 	/*$( "#field-id_jenissurat" ).change(function() {

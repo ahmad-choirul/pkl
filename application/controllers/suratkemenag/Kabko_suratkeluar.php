@@ -593,7 +593,7 @@ class Kabko_suratkeluar extends CI_Controller {
 		$crud->set_table('t_suratkeluar');
 		$crud->where('kode_kabko',$this->config->item('kode_kabko'));
 		//$crud->where('id_sifat <> 4');
-		$crud->where('tanggal_surat',$this->uri->segment(3));
+		$crud->where('tanggal_surat',$this->uri->segment(4));
 		
 		$crud->set_relation('id_jenissurat', 'ref_jenissurat', 'jenissurat');
 		$crud->set_relation('id_user', 'users', 'name');

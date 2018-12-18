@@ -71,7 +71,7 @@ class Chat extends CI_Controller {
 
 	function personal()
 	{
-		if($this->uri->segment(3)!=null)
+		if($this->uri->segment(4)!=null)
 		{
 			if (isset($_POST['pesan'])) 
 			{
@@ -89,7 +89,7 @@ class Chat extends CI_Controller {
 	    $logged_in = $this->session->userdata('logged_in'); 
 
 		$this->load->model('Model_chat');
-		$this->data['result'] = $this->Model_chat->get_chatpersonal($logged_in['id'],$this->uri->segment(3));
+		$this->data['result'] = $this->Model_chat->get_chatpersonal($logged_in['id'],$this->uri->segment(4));
 		}
 		//else { $this->data['result'] = "hallo"; }
 		$this->data['data']['main_page'] = 'suratkemenag/chat/personal';
