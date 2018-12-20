@@ -62,13 +62,13 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="http://localhost/koperasikemenag/">
-                            <div class="tile fg-white" style="background-color:#ffc107;" data-role="tile">
+                        <a href="#">
+                            <div class="tile fg-white" style="background-color:#1976d2;" data-role="tile">
                                 <div class="tile-content">
                                     <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
                                         <div class="kotakandro" style="background-image: url(' <?php echo base_url('assets/sso_files/2.png')?>');"></div>
                                     </div>
-                                    <div class="tile-label"> <b>SI-Abka</b>
+                                    <div class="tile-label"> <b>WEB 2</b>
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +157,48 @@
 
             <div id="content" class="fl-screenNavigator-scroll-containere flex-grid" style="margin-top: 25px">
                 <div class="row">
-                    <div class="cell colspan12 no-tablet" style="border-radius: 5px;background-color: #1b1a1a">
+                    <div class="cell">
+                        <div class="box fl-panel" id="login">
+                            <form action=" <?php echo site_url('Clogin/proses'); ?>" method="post" id="fm1">
+                                <div class="image-container">
+                                    <img src=" <?php echo base_url('assets/sso_files/key.png') ?>">
+                                </div>
+                                <div style="display:table;border-collapse: separate;border-spacing: 10px;width:100%;">
+                                    <div class="row fl-controls-left" style="display:table-row">
+                                        <div style="display:table-cell">
+                                            <p for="username" class="fl-label"> <span class="accesskey">U</span>sername:</p>
+                                        </div>
+                                        <div style="display:table-cell">
+                                            <input type="text" name="username" class="form-control" placeholder="Username" /> <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row fl-controls-left" style="display:table-row">
+                                        <div style="display:table-cell">
+                                            <p for="password" class="fl-label"> <span class="accesskey">P</span>assword:</p>
+                                        </div>
+                                        <div style="display:table-cell">
+                                            <input type="password" name="password" class="form-control" placeholder="Password" /> <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                            <span id="capslock-on" style="display:none;color:red;font-weight:bold;">
+                                             <p>
+                                             <i class="fa fa-exclamation-circle"></i><span>CAPSLOCK key is turned on!</span>
+                                            </p>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row btn-row" style="text-align:center;">
+                                    <button type="submit" class="button primary">Log in</button>
+                                    <!-- &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href=" <?php echo base_url('Cregistrasi'); ?>">
+                                 <button class="image-button danger" type="button">Register <span class="icon mif-question bg-darkRed"></span>
+                                 </button> -->
+                              <!-- </a> -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cell colspan8 no-tablet" style="border-radius: 5px;background-color: #1b1a1a">
                         <div class="tile-container">
                             <a href="<?php echo site_url('suratkemenag/auth') ?>">
                                 <div class="tile fg-white" style="background-color:#c62828;" data-role="tile">
@@ -176,18 +217,18 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="http://localhost/koperasikemenag/">
-                                <div class="tile fg-white" style="background-color:#ffc107;" data-role="tile">
+                            <a href="#">
+                                <div class="tile fg-white" style="background-color:#1976d2;" data-role="tile">
                                     <div class="tile-content slide-up-2">
                                         <div class="slide">
                                             <div class="image-container image-format-fill" style="width: 100%; height: 100%;">
                                                 <div class="kotakweb" style="background-image: url('<?php echo base_url('assets/sso_files/2.png')?>');"></div>
                                             </div>
                                         </div>
-                                        <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#ffc107;">SI-Abka
+                                        <div class="slide-over text-small padding10" style="font-weight:bold;background-color:#1976d2;">sistem web 2
                                             <br> <span style="text-align:right">Copyright © PKL UNEJ</span>
                                         </div>
-                                        <div class="tile-label"> <b>SI-Abka</b>
+                                        <div class="tile-label"> <b>WEB 2</b>
                                         </div>
                                     </div>
                                 </div>

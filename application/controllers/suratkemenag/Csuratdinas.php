@@ -85,8 +85,8 @@ class Csuratdinas extends CI_Controller {
 
 		$crud->unset_delete();
 
-		$crud->add_action('Cetak', base_url().'tt.png', 'suratkemenag/Csuratdinas/cetak');
-		$crud->add_action('Cetak2', base_url().'disp.png', 'suratkemenag/Csuratdinas/cetak2');
+		$crud->add_action('Cetak', base_url().'st.png', 'suratkemenag/Csuratdinas/cetak');
+		$crud->add_action('Cetak2', base_url().'spd.png', 'suratkemenag/Csuratdinas/cetak2');
 
 		$output = $crud->render();
 
